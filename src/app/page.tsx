@@ -1,7 +1,18 @@
 'use client'
 import styles from "./page.module.css";
+import {useState} from "react";
+import Link from "next/link";
 
 const Home = () => {
+    const [activeLink, setActiveLink] = useState<string>('#home'); // Состояние для активной ссылки
+
+    // Функция обработки клика по ссылке
+    const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        e.preventDefault(); // Предотвращаем стандартное поведение перехода
+        setActiveLink(href); // Устанавливаем новую активную ссылку
+        document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' }); // Плавный скролл к секции
+    };
+
   return (
 
     <div className={styles.page}>
@@ -16,16 +27,21 @@ const Home = () => {
                     </div>
 
                     <ul className={styles.nav}>
-                        <li><a href="#home" className={`${styles.active}`}><i className={`${styles.fa} fa-home"}`}></i>Home</a></li>
-                        <li><a href="#about"><i className={`${styles.fa} fa-user"}`}></i>About</a></li>
-                        <li><a href="#services"><i className={`${styles.fa} fa-list"}`}></i>Services</a></li>
-                        <li><a href="#portfolio"><i className={`${styles.fa} fa-briefcase"}`}></i>Portfolio</a></li>
-                        <li><a href="#contact"><i className={`${styles.fa} fa-comments"}`}></i>Contact</a></li>
+                        <li><Link href="#home"           className={`${styles.link} ${activeLink === '#home' ? styles.active : ''}`}
+                               onClick={(e) => handleLinkClick(e, '#home')}><i className={`${styles.fa} fa-home"}`}></i>Home</Link></li>
+                        <li><Link href="#about"           className={`${styles.link} ${activeLink === '#about' ? styles.active : ''}`}
+                               onClick={(e) => handleLinkClick(e, '#about')}><i className={`${styles.fa} fa-user"}`}></i>About</Link></li>
+                        <li><Link href="#service" className={`${styles.link} ${activeLink === '#service' ? styles.active : ''}`}
+                               onClick={(e) => handleLinkClick(e, '#service')}><i className={`${styles.fa} fa-list"}`}></i>Services</Link></li>
+                        <li><Link href="#portfolio" className={`${styles.link} ${activeLink === '#portfolio' ? styles.active : ''}`}
+                               onClick={(e) => handleLinkClick(e, '#portfolio')}><i className={`${styles.fa} fa-briefcase"}`}></i>Portfolio</Link></li>
+                        <li><Link href="#contact" className={`${styles.link} ${activeLink === '#contact' ? styles.active : ''}`}
+                               onClick={(e) => handleLinkClick(e, '#contact')}><i className={`${styles.fa} fa-comments"}`}></i>Contact</Link></li>
                     </ul>
                 </div>
 
                 <div className={styles.mainContent}>
-                    <section className={`${styles.home} ${styles.section} ${styles.active}`} id="home">
+                    <section className={`${styles.home} ${styles.section} ${activeLink === '#home' ? styles.active : ''}`} id={"home"}>
                         <div className={styles.container}>
                             <div className={styles.row}>
                                 <div className={`${styles.homeInfo} ${styles.padd15}`}>
@@ -43,7 +59,7 @@ const Home = () => {
                         </div>
                     </section>
 
-                    <section className={`${styles.about} ${styles.section}  `} id="about">
+                    <section className={`${styles.about} ${styles.section} ${activeLink === '#about' ? styles.active : ''} `} id={"about"}>
                         <div className={styles.container}>
                             <div className={styles.row}>
                                 <div className={`${styles.sectionTitle} ${styles.padd15}`}>
@@ -260,7 +276,7 @@ const Home = () => {
                         </div>
                     </section>
 
-                    <section className={`${styles.service} ${styles.section} `} id="services">
+                    <section className={`${styles.service} ${styles.section} ${activeLink === '#service' ? styles.active : ''} `} id={"service"}>
                         <div className="container">
                             <div className={styles.row}>
                                 <div className="section-title padd-15">
@@ -337,7 +353,7 @@ const Home = () => {
                         </div>
                     </section>
 
-                    <section className={`${styles.portfolio} ${styles.section} `} id="portfolio">
+                    <section className={`${styles.portfolio} ${styles.section} ${activeLink === '#portfolio' ? styles.active : ''} `} id={"portfolio"}>
                             <div className={`${styles.container}`}>
                             <div className={styles.row}>
                                 <div className={`${styles.sectionTitle} ${styles.padd15}`}>
@@ -409,7 +425,7 @@ const Home = () => {
                         </div>
                     </section>
 
-                    <section className={`${styles.contact} ${styles.section} `} id="contact">
+                    <section className={`${styles.contact} ${styles.section} ${activeLink === '#contact' ? styles.active : ''} `} id={"contact"}>
                         <div className={`${styles.container}`}>
                             <div className={styles.row}>
                                 <div className={`${styles.sectionTitle} ${styles.padd15}`}>
