@@ -196,36 +196,36 @@ h3.profession { font-size: 30px; margin: 15px 0; }
 .about .aboutContent .personalInfo .buttons { margin-top: 30px; }
 .about .aboutContent .personalInfo .buttons .btn { margin-top: 10px; }
 .about .aboutContent .skills { flex: 0 0 40%; max-width: 40%; margin-top: 40px; }
-.about .aboutContent .skills .skill-item { flex: 0 0 100%; max-width: 100%; margin-bottom: 25px; }
-.about .aboutContent .skills .skill-item h5 { line-height: 40px; font-weight: 600; font-size: 16px; color: var(--text-black900); text-transform: capitalize; }
-.about .aboutContent .skills .skill-item .skill-percent { position: absolute; right: 0; color: var(--text-black900); top: -40px; font-weight: 400; line-height: 40px; }
-.about .aboutContent .skills .skill-item .progress { background-color: var(--bg-black50); height: 7px; border-radius: 4px; width: 100%; position: relative; }
-.about .aboutContent .skills .skill-item .progress .progress-in { position: absolute; left: 0; top: 0; height: 100%; border-radius: 4px; background-color: var(--skin-color); }
+.about .aboutContent .skills .skillItem { flex: 0 0 100%; max-width: 100%; margin-bottom: 25px; }
+.about .aboutContent .skills .skillItem h5 { line-height: 40px; font-weight: 600; font-size: 16px; color: var(--text-black900); text-transform: capitalize; }
+.about .aboutContent .skills .skillItem .skillPercent { position: absolute; right: 0; color: var(--text-black900); top: -40px; font-weight: 400; line-height: 40px; }
+.about .aboutContent .skills .skillItem .progress { background-color: var(--bg-black50); height: 7px; border-radius: 4px; width: 100%; position: relative; }
+.about .aboutContent .skills .skillItem .progress .progressIn { position: absolute; left: 0; top: 0; height: 100%; border-radius: 4px; background-color: var(--skin-color); }
 .about .aboutContent .education, .about .aboutContent .experience { flex: 0 0 50%; max-width: 50%; margin-top: 30px; }
 .about .aboutContent h3.title { font-size: 24px; margin-bottom: 30px; font-weight: 700; color: var(--text-black900); }
-.about .aboutContent .timeline-box { flex: 0 0 100%; max-width: 100%; }
+.about .aboutContent .timelineBox { flex: 0 0 100%; max-width: 100%; }
 .about .aboutContent .timeline { background-color: var(--bg-black100); padding: 30px 15px; border: 1px solid var(--bg-black50); border-radius: 10px; width: 100%; position: relative; }
-.about .aboutContent .timeline .timeline-item { position: relative; padding-left: 37px; padding-bottom: 50px; }
-.about .aboutContent .timeline .timeline-item:last-child { padding-bottom: 0; }
-.about .aboutContent .timeline .timeline-item::before { content: ''; width: 1px; position: absolute; height: 100%; left: 7px; top: 0; background-color: var(--skin-color); }
-.about .aboutContent .timeline .circle-dot { position: absolute; left: 0; top: 0; height: 15px; width: 15px; border-radius: 50%; background-color: var(--skin-color); }
-.about .aboutContent .timeline .timeline-date { font-weight: 400; font-size: 14px; margin-bottom: 12px; color: var(--text-black700); }
-.about .aboutContent .timeline .timeline-date .fa { margin-right: 5px; }
-.about .aboutContent .timeline .timeline-title { font-weight: 700; font-size: 18px; margin-bottom: 15px; text-transform: capitalize; color: var(--text-black900); }
-.about .aboutContent .timeline .timeline-text { line-height: 25px; font-size: 16px; text-align: justify; color: var(--text-black700); }
+.about .aboutContent .timeline .timelineItem { position: relative; padding-left: 37px; padding-bottom: 50px; }
+.about .aboutContent .timeline .timelineItem:last-child { padding-bottom: 0; }
+.about .aboutContent .timeline .timelineItem::before { content: ''; width: 1px; position: absolute; height: 100%; left: 7px; top: 0; background-color: var(--skin-color); }
+.about .aboutContent .timeline .circleDot { position: absolute; left: 0; top: 0; height: 15px; width: 15px; border-radius: 50%; background-color: var(--skin-color); }
+.about .aboutContent .timeline .timelineDate { font-weight: 400; font-size: 14px; margin-bottom: 12px; color: var(--text-black700); }
+.about .aboutContent .timeline .timelineDate .fa { margin-right: 5px; }
+.about .aboutContent .timeline .timelineTitle { font-weight: 700; font-size: 18px; margin-bottom: 15px; text-transform: capitalize; color: var(--text-black900); }
+.about .aboutContent .timeline .timelineText { line-height: 25px; font-size: 16px; text-align: justify; color: var(--text-black700); }
 
 /* SERVICE */
 
 .service .container { padding-bottom: 40px; }
-.service .service-item { margin-bottom: 30px; flex: 0 0 33.33%; max-width: 33.33%; }
-.service .service-item .service-item-inner { background-color: var(--bg-black100); border: var(--bg-black50); border-radius: 10px; padding: 30px 15px; text-align: center; transition: all .3s ease; }
-.service .service-item .service-item-inner:hover { box-shadow: 0 0 20px rgba(48, 46, 77, .15); }
-.service .service-item .service-item-inner .icon { height: 60px; width: 60px; border-radius: 50%; display: block; margin: 0 auto 30px; text-align: center; transition: all .3s ease; }
-.service .service-item .service-item-inner .icon .fa { font-size: 40px; line-height: 60px; color: var(--skin-color); transition: all .3s ease; }
-.service .service-item .service-item-inner:hover .icon { background: var(--skin-color); }
-.service .service-item .service-item-inner:hover .icon .fa { font-size: 25px; color: #FFF; }
-.service .service-item .service-item-inner h4 { font-size: 18px; margin-bottom: 15px; color: var(--text-black900); font-weight: 700; text-transform: capitalize; }
-.service .service-item .service-item-inner p { font-size: 16px; color: var(--text-black700); line-height: 25px; }
+.service .serviceItem { margin-bottom: 30px; flex: 0 0 33.33%; max-width: 33.33%; }
+.service .serviceItem .serviceItemInner { background-color: var(--bg-black100); border: var(--bg-black50); border-radius: 10px; padding: 30px 15px; text-align: center; transition: all .3s ease; }
+.service .serviceItem .serviceItemInner:hover { box-shadow: 0 0 20px rgba(48, 46, 77, .15); }
+.service .serviceItem .serviceItemInner .icon { height: 60px; width: 60px; border-radius: 50%; display: block; margin: 0 auto 30px; text-align: center; transition: all .3s ease; }
+.service .serviceItem .serviceItemInner .icon .fa { font-size: 40px; line-height: 60px; color: var(--skin-color); transition: all .3s ease; }
+.service .serviceItem .serviceItemInner:hover .icon { background: var(--skin-color); }
+.service .serviceItem .serviceItemInner:hover .icon .fa { font-size: 25px; color: #FFF; }
+.service .serviceItem .serviceItemInner h4 { font-size: 18px; margin-bottom: 15px; color: var(--text-black900); font-weight: 700; text-transform: capitalize; }
+.service .serviceItem .serviceItemInner p { font-size: 16px; color: var(--text-black700); line-height: 25px; }
 
 /* PORTFOLIO */
 
@@ -287,12 +287,12 @@ h3.profession { font-size: 30px; margin: 15px 0; }
 
     .about .aboutContent .skills, .about .aboutContent .personalInfo, .about .aboutContent .experience, .about .aboutContent .education { flex: 0 0 100%; max-width: 100%; }
 
-    .contact .contactInfoItem, .portfolio .portfolioItem, .service .service-item { flex: 0 0 50%; max-width: 50%; }
+    .contact .contactInfoItem, .portfolio .portfolioItem, .service .serviceItem { flex: 0 0 50%; max-width: 50%; }
 }
 
 @media (max-width: 767px) {
 
-    .portfolio .portfolioItem, .service .service-item, .contact .contactForm .col6 { flex: 0 0 100%; max-width: 100%; }
+    .portfolio .portfolioItem, .service .serviceItem, .contact .contactForm .col6 { flex: 0 0 100%; max-width: 100%; }
 }
 
 @media (max-width: 460px) {
