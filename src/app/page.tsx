@@ -119,51 +119,51 @@ const Home = () => {
                                             </div>
 
                                             <div className={styles.row}>
-                                                <div className="buttons padd-15">
-                                                    <a href="#contact" className="btn hire-me" data-section-index="1">Hire
+                                                <div className={`${styles.buttons} ${styles. padd15}`}>
+                                                    <a href="#contact" className={`${styles.btn} ${styles.hireMme}`} onClick={(e) => handleLinkClick(e, '#contact')} data-section-index="1">Hire
                                                         me!</a>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="skills padd-15">
+                                        <div className={`${styles.skills} ${styles.padd15}`}>
                                             <div className={styles.row}>
-                                                <div className="skill-item padd-15">
+                                                <div className={`${styles.skillItem} ${styles.padd15}`}>
                                                     <h5>CSS</h5>
-                                                    <div className="progress">
-                                                        <div className="progress-in" style={{width: '76%'}}></div>
-                                                        <div className="skill-percent">76%</div>
+                                                    <div className={`${styles.progress}`}>
+                                                        <div className={`${styles.progressIn}`} style={{width: '76%'}}></div>
+                                                        <div className={`${styles.skillPercent}`}>76%</div>
                                                     </div>
                                                 </div>
 
-                                                <div className="skill-item padd-15">
+                                                <div className={`${styles.skillItem} ${styles.padd15}`}>
                                                     <h5>JS</h5>
-                                                    <div className="progress">
-                                                        <div className="progress-in" style={{width: '86%'}}></div>
-                                                        <div className="skill-percent">86%</div>
+                                                    <div className={`${styles.progress}`}>
+                                                        <div className={`${styles.progressIn}`} style={{width: '86%'}}></div>
+                                                        <div className={`${styles.skillPercent}`}>86%</div>
                                                     </div>
                                                 </div>
 
-                                                <div className="skill-item padd-15">
+                                                <div className={`${styles.skillItem} ${styles.padd15}`}>
                                                     <h5>PHP</h5>
-                                                    <div className="progress">
-                                                        <div className="progress-in" style={{width: '66%'}}></div>
-                                                        <div className="skill-percent">66%</div>
+                                                    <div className={`${styles.progress}`}>
+                                                        <div className={`${styles.progressIn}`} style={{width: '66%'}}></div>
+                                                        <div className={`${styles.skillPercent}`}>66%</div>
                                                     </div>
                                                 </div>
 
-                                                <div className="skill-item padd-15">
+                                                <div className={`${styles.skillItem} ${styles.padd15}`}>
                                                     <h5>HTML</h5>
-                                                    <div className="progress">
-                                                        <div className="progress-in" style={{width: '96%'}}></div>
-                                                        <div className="skill-percent">96%</div>
+                                                    <div className={`${styles.progress}`}>
+                                                        <div className={`${styles.progressIn}`} style={{width: '96%'}}></div>
+                                                        <div className={`${styles.skillPercent}`}>96%</div>
                                                     </div>
                                                 </div>
 
-                                                <div className="skill-item padd-15">
+                                                <div className={`${styles.skillItem} ${styles.padd15}`}>
                                                     <h5>Bootstrap</h5>
-                                                    <div className="progress">
-                                                        <div className="progress-in" style={{width: '76%'}}></div>
-                                                        <div className="skill-percent">76%</div>
+                                                    <div className={`${styles.progress}`}>
+                                                        <div className={`${styles.progressIn}`} style={{width: '76%'}}></div>
+                                                        <div className={`${styles.skillPercent}`}>76%</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -171,19 +171,19 @@ const Home = () => {
                                     </div>
 
                                     <div className={styles.row}>
-                                        <div className="education padd-15">
-                                            <h3 className="title">Education</h3>
+                                        <div className={`${styles.education} ${styles.padd15}`}>
+                                            <h3 className={`${styles.title}`}>Education</h3>
                                             <div className={styles.row}>
-                                                <div className="timeline-box padd-15">
-                                                    <div className="timeline shadow-dark">
-                                                        <div className="timeline-item">
-                                                            <div className="circle-dot"></div>
-                                                            <h3 className="timeline-date">
-                                                                <i className="fa fa-calendar"></i> 2013 - 2015
+                                                <div className={`${styles.timelineBox} ${styles.padd15}`}>
+                                                    <div className={`${styles.timeline} ${styles.shadowDark}`}>
+                                                        <div className={`${styles.timelineItem}`}>
+                                                            <div className={`${styles.circleDot}`}></div>
+                                                            <h3 className={`${styles.timelineDate}`}>
+                                                                <i className={`${'fa'} ${'fa-calendar'}`}></i> 2013 - 2015
                                                             </h3>
-                                                            <h4 className="timeline-title">Master in Computer
+                                                            <h4 className={`${styles.timelineTitle}`}>Master in Computer
                                                                 Science</h4>
-                                                            <p className="timeline-text">I learnt a wide range of topics
+                                                            <p className={`${styles.timelineText}`}>I learnt a wide range of topics
                                                                 that are essential to understanding both the theory and
                                                                 practical aspects of computing. This involves
                                                                 programming fundamentals, computer architecture,
@@ -192,25 +192,25 @@ const Home = () => {
                                                                 skills.</p>
                                                         </div>
 
-                                                        <div className="timeline-item">
-                                                            <div className="circle-dot"></div>
-                                                            <h3 className="timeline-date">
-                                                                <i className="fa fa-calendar"></i> 2011 - 2014
+                                                        <div className={`${styles.timelineItem}`}>
+                                                            <div className={`${styles.circleDot}`}></div>
+                                                            <h3 className={`${styles.timelineDate}`}>
+                                                                <i className={`${'fa'} ${'fa-calendar'}`}></i> 2011 - 2014
                                                             </h3>
-                                                            <h4 className="timeline-title">Master Degree</h4>
-                                                            <p className="timeline-text">I chose my master degree in
+                                                            <h4 className={`${styles.timelineTitle}`}>Master Degree</h4>
+                                                            <p className={`${styles.timelineText}`}>I chose my master degree in
                                                                 technology. There I deepened my knowledge, enhanced my
                                                                 skills in the area and learnt how to increase my career
                                                                 prospects in a competitive job market.</p>
                                                         </div>
 
-                                                        <div className="timeline-item">
-                                                            <div className="circle-dot"></div>
-                                                            <h3 className="timeline-date">
-                                                                <i className="fa fa-calendar"></i> 2007 - 2010
+                                                        <div className={`${styles.timelineItem}`}>
+                                                            <div className={`${styles.circleDot}`}></div>
+                                                            <h3 className={`${styles.timelineDate}`}>
+                                                                <i className={`${'fa'} ${'fa-calendar'}`}></i> 2007 - 2010
                                                             </h3>
-                                                            <h4 className="timeline-title">Bachelor Degree</h4>
-                                                            <p className="timeline-text">There I learnt foundational
+                                                            <h4 className={`${styles.timelineTitle}`}>Bachelor Degree</h4>
+                                                            <p className={`${styles.timelineText}`}>There I learnt foundational
                                                                 courses and computer sciences fundamentals. In the
                                                                 institution, I chose my specialization in
                                                                 web-development that involves front-end and back-end
@@ -222,46 +222,46 @@ const Home = () => {
                                             </div>
                                         </div>
 
-                                        <div className="experience padd-15">
-                                            <h3 className="title">Experience</h3>
+                                        <div className={`${styles.experience} ${styles. padd15}`}>
+                                            <h3 className={`${styles.title}`}>Experience</h3>
                                             <div className={styles.row}>
-                                                <div className="timeline-box padd-15">
-                                                    <div className="timeline shadow-dark">
-                                                        <div className="timeline-item">
-                                                            <div className="circle-dot"></div>
-                                                            <h3 className="timeline-date">
-                                                                <i className="fa fa-calendar"></i> 2020 - Today
+                                                <div className={`${styles.timelineBox} ${styles.padd15}`}>
+                                                    <div className={`${styles.timeline} ${styles.shadowDark}`}>
+                                                        <div className={`${styles.timelineItem}`}>
+                                                            <div className={`${styles.circleDot}`}></div>
+                                                            <h3 className={`${styles.timelineDate}`}>
+                                                                <i className={`${'fa'} ${'fa-calendar'}`}></i> 2020 - Today
                                                             </h3>
-                                                            <h4 className="timeline-title">Senior Front-end
+                                                            <h4 className={`${styles.timelineTitle}`}>Senior Front-end
                                                                 Designer</h4>
-                                                            <p className="timeline-text">I can design complex software
+                                                            <p className={`${styles.timelineText}`}>I can design complex software
                                                                 systems. My decisions impact scalability,
                                                                 maintainability, and overall system architecture. Also,
                                                                 I mentor less experienced team members, helping them
                                                                 grow and learn.</p>
                                                         </div>
 
-                                                        <div className="timeline-item">
-                                                            <div className="circle-dot"></div>
-                                                            <h3 className="timeline-date">
-                                                                <i className="fa fa-calendar"></i> 2017 - 2019
+                                                        <div className={`${styles.timelineItem}`}>
+                                                            <div className={`${styles.circleDot}`}></div>
+                                                            <h3 className={`${styles.timelineDate}`}>
+                                                                <i className={`${'fa'} ${'fa-calendar'}`}></i> 2017 - 2019
                                                             </h3>
-                                                            <h4 className="timeline-title">Junior Front-end
+                                                            <h4 className={`${styles.timelineTitle}`}>Junior Front-end
                                                                 Designer</h4>
-                                                            <p className="timeline-text">I learnt to code in an existing
+                                                            <p className={`${styles.timelineText}`}>I learnt to code in an existing
                                                                 codebase, dive into the project and understanding its
                                                                 structure. Also I worked closely with senior software
                                                                 engineers that guided me, answered my questions and
                                                                 helped me grow.</p>
                                                         </div>
 
-                                                        <div className="timeline-item">
-                                                            <div className="circle-dot"></div>
-                                                            <h3 className="timeline-date">
-                                                                <i className="fa fa-calendar"></i> 2014 - 2016
+                                                        <div className={`${styles.timelineItem}`}>
+                                                            <div className={`${styles.circleDot}`}></div>
+                                                            <h3 className={`${styles.timelineDate}`}>
+                                                                <i className={`${'fa'} ${'fa-calendar'}`}></i> 2014 - 2016
                                                             </h3>
-                                                            <h4 className="timeline-title">Graphic Designer</h4>
-                                                            <p className="timeline-text">I can create logos, color
+                                                            <h4 className={`${styles.timelineTitle}`}>Graphic Designer</h4>
+                                                            <p className={`${styles.timelineText}`}>I can create logos, color
                                                                 schemes and typography for a brand's identity. Also I
                                                                 develop graphics for websites, social media and digital
                                                                 ads with applications that enhance user experience.</p>
@@ -277,18 +277,18 @@ const Home = () => {
                     </section>
 
                     <section className={`${styles.service} ${styles.section} ${activeLink === '#service' ? styles.active : ''} `} id={"service"}>
-                        <div className="container">
+                        <div className={`${styles.container}`}>
                             <div className={styles.row}>
-                                <div className="section-title padd-15">
+                                <div className={`${styles.sectionTitle} ${styles.padd15}`}>
                                     <h2>Services</h2>
                                 </div>
                             </div>
 
                             <div className={styles.row}>
-                                <div className="service-item padd-15">
-                                    <div className="service-item-inner">
-                                        <div className="icon">
-                                            <i className="fa fa-mobile-alt"></i>
+                                <div className={`${styles.serviceItem} ${styles.padd15}`}>
+                                    <div className={`${styles.serviceItemInner}`}>
+                                        <div className={`${styles.icon}`}>
+                                            <i className={`${'fa'} ${'fa-mobile-alt'}`}></i>
                                         </div>
                                         <h4>Web Design</h4>
                                         <p>I offer custom website designs, responsive design to ensure compatibility
@@ -296,10 +296,10 @@ const Home = () => {
                                     </div>
                                 </div>
 
-                                <div className="service-item padd-15">
-                                    <div className="service-item-inner">
-                                        <div className="icon">
-                                            <i className="fa fa-laptop-code"></i>
+                                <div className={`${styles.serviceItem} ${styles.padd15}`}>
+                                    <div className={`${styles.serviceItemInner}`}>
+                                        <div className={`${styles.icon}`}>
+                                            <i className={`${'fa'} ${'fa-laptop-code'}`}></i>
                                         </div>
                                         <h4>Graphic Design</h4>
                                         <p>I design logos, icons, illustrations, and other visual assets that enhance
@@ -307,10 +307,10 @@ const Home = () => {
                                     </div>
                                 </div>
 
-                                <div className="service-item padd-15">
-                                    <div className="service-item-inner">
-                                        <div className="icon">
-                                            <i className="fa fa-palette"></i>
+                                <div className={`${styles.serviceItem} ${styles.padd15}`}>
+                                    <div className={`${styles.serviceItemInner}`}>
+                                        <div className={`${styles.icon}`}>
+                                            <i className={`${'fa'} ${'fa-palette'}`}></i>
                                         </div>
                                         <h4>Digital Marketing</h4>
                                         <p>I build websites that enhances visual aesthetics, user experience, SEO,
@@ -318,10 +318,10 @@ const Home = () => {
                                     </div>
                                 </div>
 
-                                <div className="service-item padd-15">
-                                    <div className="service-item-inner">
-                                        <div className="icon">
-                                            <i className="fa fa-code"></i>
+                                <div className={`${styles.serviceItem} ${styles.padd15}`}>
+                                    <div className={`${styles.serviceItemInner}`}>
+                                        <div className={`${styles.icon}`}>
+                                            <i className={`${'fa'} ${'fa-code'}`}></i>
                                         </div>
                                         <h4>UI/UX Solutions</h4>
                                         <p>I offer custom research and design to increase your customer satisfaction and
@@ -329,10 +329,10 @@ const Home = () => {
                                     </div>
                                 </div>
 
-                                <div className="service-item padd-15">
-                                    <div className="service-item-inner">
-                                        <div className="icon">
-                                            <i className="fa fa-search"></i>
+                                <div className={`${styles.serviceItem} ${styles.padd15}`}>
+                                    <div className={`${styles.serviceItemInner}`}>
+                                        <div className={`${styles.icon}`}>
+                                            <i className={`${'fa'} ${'fa-search'}`}></i>
                                         </div>
                                         <h4>Brand Consultancy</h4>
                                         <p>I build brands through cultural insights & strategic vision. Custom crafted
@@ -340,10 +340,10 @@ const Home = () => {
                                     </div>
                                 </div>
 
-                                <div className="service-item padd-15">
-                                    <div className="service-item-inner">
-                                        <div className="icon">
-                                            <i className="fa fa-bullhorn"></i>
+                                <div className={`${styles.serviceItem} ${styles.padd15}`}>
+                                    <div className={`${styles.serviceItemInner}`}>
+                                        <div className={`${styles.icon}`}>
+                                            <i className={`${'fa'} ${'fa-bullhorn'}`}></i>
                                         </div>
                                         <h4>Photography</h4>
                                         <p>I make high-quality photos of any category at a professional level.</p>
@@ -438,26 +438,26 @@ const Home = () => {
 
                             <div className={styles.row}>
                                 <div className={`${styles.contactInfoItem} ${styles.padd15}`}>
-                                    <div className="icon"><i className="fa fa-phone"></i></div>
+                                    <div className={`${styles.icon}`}><i className={`${'fa'} ${'fa-phone'}`}></i></div>
                                     <h4>Call us on</h4>
                                     <p>+92 333 054 5218</p>
                                 </div>
 
 
                                 <div className={`${styles.contactInfoItem} ${styles.padd15}`}>
-                                    <div className="icon"><i className="fa fa-map-marker-alt"></i></div>
+                                    <div className={`${styles.icon}`}><i className={`${'fa'} ${'fa-map-marker-alt'}`}></i></div>
                                     <h4>Office</h4>
                                     <p>São Paulo</p>
                                 </div>
 
                                 <div className={`${styles.contactInfoItem} ${styles.padd15}`}>
-                                    <div className="icon"><i className="fa fa-envelope"></i></div>
+                                    <div className={`${styles.icon}`}><i className={`${'fa'} ${'fa-envelope'}`}></i></div>
                                     <h4>Email</h4>
                                     <p>info@gmail.com</p>
                                 </div>
 
                                 <div className={`${styles.contactInfoItem} ${styles.padd15}`}>
-                                    <div className="icon"><i className="fa fa-globe"></i></div>
+                                    <div className={`${styles.icon}`}><i className={`${'fa'} ${'fa-globe'}`}></i></div>
                                     <h4>Website</h4>
                                     <p>www.domain.com</p>
                                 </div>
