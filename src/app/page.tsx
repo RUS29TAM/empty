@@ -1,7 +1,6 @@
 'use client'
 import styles from "./page.module.css";
-import {useState} from "react";
-import Link from "next/link";
+import {useEffect, useState} from "react";
 
 const Home = () => {
     const [activeLink, setActiveLink] = useState<string>('#home'); // Состояние для активной ссылки
@@ -12,6 +11,62 @@ const Home = () => {
         setActiveLink(href); // Устанавливаем новую активную ссылку
         document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' }); // Плавный скролл к секции
     };
+
+
+    const [activeSectionIndex, setActiveSectionIndex] = useState(0);
+
+    // Список секций
+    const sections = [
+        { id: 1, title: 'Home' },
+        { id: 2, title: 'About' },
+        { id: 3, title: 'Services' },
+        { id: 4, title: 'Portfolio' },
+        { id: 5, title: 'Contact' },
+    ];
+
+    // Функция для обработки клика по пункту меню
+    const handleNavClick = (index: number) => {
+        setActiveSectionIndex(index);
+        removeBackSection();
+        addBackSection(index);
+        if (window.innerWidth < 1200) {
+            asideSectionTogglerBtn();
+        }
+    };
+
+    // Функция для добавления "back-section" к предыдущей секции
+    const addBackSection = (index: number) => {
+        const sectionElement = document.querySelector(`#section-${index}`);
+        if (sectionElement) {
+            sectionElement.classList.add('back-section');
+        }
+    };
+
+    // Функция для удаления "back-section" со всех секций
+    const removeBackSection = () => {
+        const allSections = document.querySelectorAll('.section');
+        allSections.forEach((section) => {
+            section.classList.remove('back-section');
+        });
+    };
+
+    // Функция-заглушка для тогглера боковой панели
+    const asideSectionTogglerBtn = () => {
+        console.log('Aside toggler button clicked');
+    };
+
+    // Функция для показа секции
+    const showSection = (index: number) => {
+        const sectionElement = document.querySelector(`#section-${index}`);
+        if (sectionElement) {
+            sectionElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
+    useEffect(() => {
+        // При изменении состояния activeSectionIndex, прокручиваем к соответствующей секции
+        showSection(activeSectionIndex);
+    }, [activeSectionIndex]);
 
   return (
 
@@ -26,22 +81,29 @@ const Home = () => {
                         <span></span>
                     </div>
 
-                    <ul className={styles.nav}>
-                        <li><Link href="#home"           className={`${styles.link} ${activeLink === '#home' ? styles.active : ''}`}
-                               onClick={(e) => handleLinkClick(e, '#home')}><i className={`${styles.fa} fa-home"}`}></i>Home</Link></li>
-                        <li><Link href="#about"           className={`${styles.link} ${activeLink === '#about' ? styles.active : ''}`}
-                               onClick={(e) => handleLinkClick(e, '#about')}><i className={`${styles.fa} fa-user"}`}></i>About</Link></li>
-                        <li><Link href="#service" className={`${styles.link} ${activeLink === '#service' ? styles.active : ''}`}
-                               onClick={(e) => handleLinkClick(e, '#service')}><i className={`${styles.fa} fa-list"}`}></i>Services</Link></li>
-                        <li><Link href="#portfolio" className={`${styles.link} ${activeLink === '#portfolio' ? styles.active : ''}`}
-                               onClick={(e) => handleLinkClick(e, '#portfolio')}><i className={`${styles.fa} fa-briefcase"}`}></i>Portfolio</Link></li>
-                        <li><Link href="#contact" className={`${styles.link} ${activeLink === '#contact' ? styles.active : ''}`}
-                               onClick={(e) => handleLinkClick(e, '#contact')}><i className={`${styles.fa} fa-comments"}`}></i>Contact</Link></li>
-                    </ul>
+                    <nav className={`${styles.nav}`}>
+                        <ul>
+                            {sections.map((section, index) => (
+                                <li key={section.id}>
+                                    <a
+                                        href={`#section-${index}`}
+                                        className={activeSectionIndex === index ? styles.active : ''}
+                                        onClick={(e) => {
+                                            e.preventDefault();
+                                            handleNavClick(index);
+                                            handleLinkClick(e, `${`#section-${index}`}`)
+                                        }}
+                                    >
+                                        {section.title}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </nav>
                 </div>
 
                 <div className={styles.mainContent}>
-                    <section className={`${styles.home} ${styles.section} ${activeLink === '#home' ? styles.active : ''}`} id={"home"}>
+                    <section className={`${styles.home} ${styles.section} ${activeLink === '#section-0' ? styles.active : ''}`} id={"home"}>
                         <div className={styles.container}>
                             <div className={styles.row}>
                                 <div className={`${styles.homeInfo} ${styles.padd15}`}>
@@ -59,7 +121,7 @@ const Home = () => {
                         </div>
                     </section>
 
-                    <section className={`${styles.about} ${styles.section} ${activeLink === '#about' ? styles.active : ''} `} id={"about"}>
+                    <section className={`${styles.about} ${styles.section} ${activeLink === '#section-1' ? styles.active : ''} `} id={"about"}>
                         <div className={styles.container}>
                             <div className={styles.row}>
                                 <div className={`${styles.sectionTitle} ${styles.padd15}`}>
@@ -276,7 +338,7 @@ const Home = () => {
                         </div>
                     </section>
 
-                    <section className={`${styles.service} ${styles.section} ${activeLink === '#service' ? styles.active : ''} `} id={"service"}>
+                    <section className={`${styles.service} ${styles.section} ${activeLink === '#section-2' ? styles.active : ''} `} id={"service"}>
                         <div className={`${styles.container}`}>
                             <div className={styles.row}>
                                 <div className={`${styles.sectionTitle} ${styles.padd15}`}>
@@ -353,7 +415,7 @@ const Home = () => {
                         </div>
                     </section>
 
-                    <section className={`${styles.portfolio} ${styles.section} ${activeLink === '#portfolio' ? styles.active : ''} `} id={"portfolio"}>
+                    <section className={`${styles.portfolio} ${styles.section} ${activeLink === '#section-3' ? styles.active : ''} `} id={"portfolio"}>
                             <div className={`${styles.container}`}>
                             <div className={styles.row}>
                                 <div className={`${styles.sectionTitle} ${styles.padd15}`}>
@@ -425,7 +487,7 @@ const Home = () => {
                         </div>
                     </section>
 
-                    <section className={`${styles.contact} ${styles.section} ${activeLink === '#contact' ? styles.active : ''} `} id={"contact"}>
+                    <section className={`${styles.contact} ${styles.section} ${activeLink === '#section-4' ? styles.active : ''} `} id={"contact"}>
                         <div className={`${styles.container}`}>
                             <div className={styles.row}>
                                 <div className={`${styles.sectionTitle} ${styles.padd15}`}>
@@ -501,7 +563,7 @@ const Home = () => {
                                     <div className={styles.row}>
                                         <div className={`${styles.formItem} ${styles.col12} ${styles.padd15}`}>
                                             <div className={`${styles.formGroup}`}>
-                                                <button type="submit" className="btn">Send Message</button>
+                                                <button type="submit" className={`${styles.btn}`}>Send Message</button>
                                             </div>
                                         </div>
                                     </div>
