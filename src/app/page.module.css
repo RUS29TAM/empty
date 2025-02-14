@@ -3,7 +3,7 @@
     background: var(--bg-black900);
     min-height: 100vh;
     display: block;
-    opacity: 1;
+    opacity: 0;
     padding: 0 30px;
     position: fixed;
     left: 270px;
@@ -13,10 +13,11 @@
     z-index: 0;
     overflow-x: hidden;
     overflow-y: auto;
-    transition: all .3s ease;
+    transition: all .8s ease;
 }
-.section.back-section { z-index: 1; }
-.section.active { z-index: 2; opacity: 1; animation: slideSection 1s ease; }
+
+.section.backSection { z-index: 1; }
+.section.active { z-index: 2; opacity: 1; animation: slideSection 1s ease;  }
 @keyframes slideSection {
     0% { transform: translateX(100%); }
     100% { transform: translateX(0%); }
@@ -93,7 +94,7 @@
     border-left: 5px solid var(--skin-color);
     bottom: 0;
     left: 0;
-    border-radius: 50%;
+    /*border-radius: 50%;*/
 }
 .aside .logo a::after {
     content: '';
@@ -104,12 +105,15 @@
     border-right: 5px solid var(--skin-color);
     top: 0;
     right: 0;
-    border-radius: 50%;
+    /*border-radius: 50%;*/
 }
 .aside .logo a span { font-family: 'Clicker Script', cursive; font-size: 40px; }
 .aside .nav { margin-top: 50px; }
-.aside .nav li { margin-bottom: 20px; display: block; }
-.aside .nav li a { font-size: 16px; font-weight: 600; display: block; color: var(--text-black900); padding: 5px 15px; border-bottom: 1px solid var(--bg-black50); }
+.aside .nav li { margin-bottom: 20px; display: block; color: var(--navIconColor) }
+.aside .nav li a {text-transform: uppercase; letter-spacing: 0.15em; font-size: 16px; font-weight: 600; display: block; color: var(--text-black900); padding: 5px 15px; border-bottom: 1px solid var(--bg-black50); width: 100% }
+.aside .nav li a:hover {
+    scale: 0.9;  transition: 0.3s ease;
+}
 .aside .nav li a.active { color: var(--skin-color); }
 .aside .nav li a i { margin-right: 15px; }
 .aside .navToggler {
@@ -153,33 +157,39 @@
 /* HOME */
 
 .home { min-height: 100vh; display: flex; color: var(--text-black900); }
-.home .homeInfo { flex: 0 0 60%; max-width: 60%; }
-h3.hello { font-size: 28px; margin: 15px 0; }
-h3.hello span { font-family: 'Clicker Script', cursive; font-size: 30px; font-weight: 700; color: var(--skin-color); }
-h3.profession { font-size: 30px; margin: 15px 0; }
-.typing { color: var(--skin-color); }
-.homeInfo p { margin-bottom: 70px; font-size: 20px; color: var(--text-black700); }
-.home .homeImg { flex: 0 0 40%; max-width: 40%; text-align: center; position: relative; }
+.home .homeInfo { flex: 0 0 60%; max-width: 60%; text-shadow: var(--textShadow)}
+h3.hello {   font-family: "Jura", serif; font-size: 28px; margin: 15px 0; }
+h3.hello span { font-family: 'Marck Script', cursive; font-size: 50px; font-weight: 700; color: var(--skin-color); }
+h3.profession { font-size: 30px; margin: 15px 0; font-family: 'Jura', serif}
+.typing { color: var(--skin-color); font-family: 'Jura', serif}
+.homeInfo p { margin-bottom: 70px; font-size: 20px; color: var(--text-black700); font-family: 'Jura', serif;  font-weight: 300; font-optical-sizing: auto; font-style: normal; text-align: justify-all   }
+.home .homeImg { flex: 0 0 40%; max-width: 40%; text-align: center;}
 .homeImg::after {
     content: '';
     position: absolute;
-    height: 80px;
-    width: 80px;
+    height: 180px;
+    width: 580px;
     border-bottom: 10px solid var(--skin-color);
     border-right: 10px solid var(--skin-color);
     right: 20px;
     bottom: -40px;
+    border-radius: 50%;
+    box-shadow: 10px 5px 10px var(--skin-color);
+    /*box-shadow: 55px 50px 50px 10px var(--skin-coub);*/
+
 }
-.homeImg::before {
-    content: '';
-    position: absolute;
-    height: 80px;
-    width: 80px;
-    border-top: 10px solid var(--skin-color);
-    border-left: 10px solid var(--skin-color);
-    left: -20px;
-    top: -40px;
-}
+/*.homeImg::before {*/
+/*    content: '';*/
+/*    position: absolute;*/
+/*    height: 180px;*/
+/*    width: 580px;*/
+/*    border-top: 10px solid var(--skin-color);*/
+/*    border-left: 10px solid var(--skin-color);*/
+/*    left: -20px;*/
+/*    top: -40px;*/
+/*    !*box-shadow: 15px 0 15px 0 var(--skin-coub);*!*/
+/*    !*border-radius: 50%;*!*/
+/*}*/
 .home .homeImg img { height: 400px; margin: auto; border-radius: 4px; }
 
 /* ABOUT */
@@ -210,21 +220,23 @@ h3.profession { font-size: 30px; margin: 15px 0; }
 .about .aboutContent .timeline .timelineItem::before { content: ''; width: 1px; position: absolute; height: 100%; left: 7px; top: 0; background-color: var(--skin-color); }
 .about .aboutContent .timeline .circleDot { position: absolute; left: 0; top: 0; height: 15px; width: 15px; border-radius: 50%; background-color: var(--skin-color); }
 .about .aboutContent .timeline .timelineDate { font-weight: 400; font-size: 14px; margin-bottom: 12px; color: var(--text-black700); }
-.about .aboutContent .timeline .timelineDate .fa { margin-right: 5px; }
+.about .aboutContent .timeline .timelineDate .fa { margin-right: 5px;}
 .about .aboutContent .timeline .timelineTitle { font-weight: 700; font-size: 18px; margin-bottom: 15px; text-transform: capitalize; color: var(--text-black900); }
 .about .aboutContent .timeline .timelineText { line-height: 25px; font-size: 16px; text-align: justify; color: var(--text-black700); }
 
 /* SERVICE */
 
 .service .container { padding-bottom: 40px; }
+/*.service .container:hover .serviceItemInner:not(:hover) { scale: .95; background: var(--iconCardsShadow); box-shadow: var(--iconCardsShadow);}*/
 .service .serviceItem { margin-bottom: 30px; flex: 0 0 33.33%; max-width: 33.33%; }
-.service .serviceItem .serviceItemInner { background-color: var(--bg-black100); border: var(--bg-black50); border-radius: 10px; padding: 30px 15px; text-align: center; transition: all .3s ease; }
-.service .serviceItem .serviceItemInner:hover { box-shadow: 0 0 20px rgba(48, 46, 77, .15); }
+
+.service .serviceItem .serviceItemInner { height: 100%; background-color: var(--bg-black100); border: var(--bg-black50); border-radius: 10px; padding: 30px 15px; text-align: center; transition: all .3s ease;}
+.service .serviceItem .serviceItemInner:hover { box-shadow: var(--serviceItemInner) }
 .service .serviceItem .serviceItemInner .icon { height: 60px; width: 60px; border-radius: 50%; display: block; margin: 0 auto 30px; text-align: center; transition: all .3s ease; }
-.service .serviceItem .serviceItemInner .icon .fa { font-size: 40px; line-height: 60px; color: var(--skin-color); transition: all .3s ease; }
-.service .serviceItem .serviceItemInner:hover .icon { background: var(--skin-color); }
-.service .serviceItem .serviceItemInner:hover .icon .fa { font-size: 25px; color: #FFF; }
-.service .serviceItem .serviceItemInner h4 { font-size: 18px; margin-bottom: 15px; color: var(--text-black900); font-weight: 700; text-transform: capitalize; }
+.service .serviceItem .serviceItemInner .icon .fa { font-size: 40px; line-height: 69px; color: var(--skin-color); transition: all .3s ease;}
+.service .serviceItem .serviceItemInner:hover .icon { background: var(--skin-color); box-shadow: 0 0 15px var(--iconService) }
+.service .serviceItem .serviceItemInner:hover .icon .fa { font-size: 25px; color: #FFF;}
+.service .serviceItem .serviceItemInner h4 { font-size: 18px; margin-bottom: 15px; color: var(--text-black900); font-weight: 700; }
 .service .serviceItem .serviceItemInner p { font-size: 16px; color: var(--text-black700); line-height: 25px; }
 
 /* PORTFOLIO */
@@ -333,16 +345,23 @@ h3.profession { font-size: 30px; margin: 15px 0; }
 }
 .styleSwitcher .sIcon i { line-height: 40px; }
 .styleSwitcher .styleSwitcherToggler { top: 0; }
-.styleSwitcher .dayNight { top: 55px; }
-.styleSwitcher .dayNight { top: 55px; }
+.styleSwitcher .dayNight { top: 55px; display: flex; justify-content: center; align-items: center; color: var(--skin-color)}
+/*.styleSwitcher .dayNight { top: 55px; }*/
 .styleSwitcher h4 { margin: 0 0 10px; color: var(--text-black700); font-size: 16px; font-weight: 600; text-transform: capitalize; }
-.styleSwitcher .colors { display: flex; flex-wrap: wrap; justify-content: space-between; }
-.styleSwitcher .colors span { display: inline-block; height: 30px; width: 30px; border-radius: 50%; }
+.styleSwitcher .colors { display: flex; flex-wrap: wrap; justify-content: space-between }
+.styleSwitcher .colors span { display: inline-block; height: 30px; width: 30px; border-radius: 50%; cursor: pointer }
+.styleSwitcher .colors span:hover {box-shadow: 0 0 5px #302E4D}
 .styleSwitcher .color1 { background: #EC1839; }
 .styleSwitcher .color2 { background: #FA5B0F; }
 .styleSwitcher .color3 { background: #37B182; }
 .styleSwitcher .color4 { background: #1854B4; }
 .styleSwitcher .color5 { background: #F021B2; }
+
+
+
+.color1{
+    color: yellow;
+}
 
 /* Create more 5 css files to enable Toggle style Switcher */
 
