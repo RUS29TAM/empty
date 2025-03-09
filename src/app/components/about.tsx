@@ -1,9 +1,11 @@
 'use client'
-import React, {useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import styles from "@/app/page.module.css";
+import ProgressBar from "@/app/components/progress-bar/progress-bar";
 
 const About = () => {
-    const [activeLink, setActiveLink] = useState<string>('#home'); // Состояние для активной ссылки
+    const [activeLink, setActiveLink] = useState<string>('#section-1'); // Состояние для активной ссылки
+    const [progress, setProgress] = useState(0); // Начальное значение прогресса
 
     return (
         <section className={`${styles.about} ${activeLink === '#section-1' ? styles.active : ''} `} id={"about"}>
@@ -13,63 +15,71 @@ const About = () => {
                         <h2>О нас</h2>
                     </div>
                 </div>
-
+                {/*Описание*/}
                 <div className={styles.row}>
                     <div className={`${styles.aboutContent} ${styles.padd15}`}>
                         <div className={styles.row}>
                             <div className={`${styles.aboutText} ${styles.padd15}`}>
                                 <h3>Проект <span>Бизнес Десант</span></h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad alias aliquam asperiores
-                                    aspernatur at, culpa debitis dolor ducimus, eligendi error esse impedit in iure
-                                    mollitia necessitatibus nesciunt nihil nobis nulla perspiciatis possimus quam
-                                    quisquam sequi similique sint sit sunt totam! Accusantium ducimus nam similique.
-                                    Alias asperiores consequatur consequuntur dignissimos, doloribus error eum ex facere
-                                    impedit in iusto laboriosam, modi molestiae nesciunt nobis odio optio pariatur
-                                    placeat porro, quae quas sapiente ut veritatis. Accusamus distinctio dolorum facere
-                                    fugiat harum inventore ipsam nesciunt numquam quas quidem quisquam, rerum sequi
-                                    tenetur unde voluptates. Aspernatur beatae blanditiis cupiditate, enim eveniet in
-                                    ipsam laborum molestiae molestias mollitia nam nesciunt non nostrum officia porro
-                                    rerum similique sit ut veritatis, voluptas? Aperiam consequuntur deleniti eligendi
-                                    ex harum in labore non nostrum provident.</p>
+                                <p className={styles.p}>Стартовал в марте 2023 года по инициативе Губернатора
+                                    Архангельской о бласти Александра Витальевича Цыбульского.
+
+                                    В ходе реализации проекта в нем приняли участие более 500 человек, и более
+                                    половины из них смогли достичь ожидаемых результатов, воспользовавшись доступными
+                                    мерами поддержки как федерального, так и регионального уровня.
+
+                                    В 2025 году «Бизнес-десант» продолжает свою работу, и мы уверены, что вновь
+                                    продемонстрируем высокую эффективность в поддержке и развитии малого и среднего
+                                    бизнеса. Участники наших мероприятий получают ценные знания, практические навыки и
+                                    комплексные услуги, которые способствуют их профессиональному росту и успешному
+                                    развитию бизнеса.
+
+                                    Регистрация новых субъектов предпринимательства и положительные отзывы участников
+                                    подтверждают, что проект оказывает значительное влияние на предпринимательскую
+                                    активность и экономическое развитие Архангельской области. Мы гордимся тем, что на
+                                    муниципальном уровне
+                                    помогаем малому бизнесу региона становиться сильнее и конкурентоспособнее!
+                                </p>
                             </div>
                         </div>
 
                         <div className={styles.row}>
+                            {/*сетка*/}
                             <div className={`${styles.personalInfo} ${styles.padd15}`}>
-                                <div className={styles.row}>
-                                    <div className={`${styles.infoItem} ${styles.padd15}`}>
-                                        <p>Date: <span>14 Feb 2025</span></p>
-                                    </div>
+                                {/*<div className={styles.row}>*/}
+                                {/*    <div className={`${styles.infoItem} ${styles.padd15}`}>*/}
+                                {/*        <p>Date: <span>14 Feb 2025</span></p>*/}
+                                {/*    </div>*/}
 
-                                    <div className={`${styles.infoItem} ${styles.padd15}`}>
-                                        <p>Spin: <span>24</span></p>
-                                    </div>
+                                {/*    <div className={`${styles.infoItem} ${styles.padd15}`}>*/}
+                                {/*        <p>Spin: <span>24</span></p>*/}
+                                {/*    </div>*/}
 
-                                    <div className={`${styles.infoItem} ${styles.padd15}`}>
-                                        <p>Website: <span>www.domain.com</span></p>
-                                    </div>
+                                {/*    <div className={`${styles.infoItem} ${styles.padd15}`}>*/}
+                                {/*        <p>Website: <span>www.domain.com</span></p>*/}
+                                {/*    </div>*/}
 
-                                    <div className={`${styles.infoItem} ${styles.padd15}`}>
-                                        <p>Email: <span>info@gmail.com</span></p>
-                                    </div>
+                                {/*    <div className={`${styles.infoItem} ${styles.padd15}`}>*/}
+                                {/*        <p>Email: <span>info@gmail.com</span></p>*/}
+                                {/*    </div>*/}
 
-                                    <div className={`${styles.infoItem} ${styles.padd15}`}>
-                                        <p>Degree: <span>A</span></p>
-                                    </div>
+                                {/*    <div className={`${styles.infoItem} ${styles.padd15}`}>*/}
+                                {/*        <p>Degree: <span>A</span></p>*/}
+                                {/*    </div>*/}
 
-                                    <div className={`${styles.infoItem} ${styles.padd15}`}>
-                                        <p>Телефон: <span>+7 800 100 7000</span></p>
-                                    </div>
+                                {/*    <div className={`${styles.infoItem} ${styles.padd15}`}>*/}
+                                {/*        <p>Телефон: <span>+7 800 100 7000</span></p>*/}
+                                {/*    </div>*/}
 
-                                    <div className={`${styles.infoItem} ${styles.padd15}`}>
-                                        <p>City: <span>Arkhangelsk</span></p>
-                                    </div>
+                                {/*    <div className={`${styles.infoItem} ${styles.padd15}`}>*/}
+                                {/*        <p>City: <span>Arkhangelsk</span></p>*/}
+                                {/*    </div>*/}
 
-                                    <div className={`${styles.infoItem} ${styles.padd15}`}>
-                                        <p>Режим работы: <span>пн-чт: 09:00 - 18:15</span><span>пн: 09:00 - 17:00</span><span>сб-вс: выходной</span>
-                                        </p>
-                                    </div>
-                                </div>
+                                {/*    <div className={`${styles.infoItem} ${styles.padd15}`}>*/}
+                                {/*        <p>Режим работы: <span>пн-чт: 09:00 - 18:15</span><span>пн: 09:00 - 17:00</span><span>сб-вс: выходной</span>*/}
+                                {/*        </p>*/}
+                                {/*    </div>*/}
+                                {/*</div>*/}
 
                                 <div className={styles.row}>
                                     <div className={`${styles.buttons} ${styles.padd15}`}>
@@ -78,140 +88,237 @@ const About = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className={`${styles.skills} ${styles.padd15}`}>
+                            {/*инфографика*/}
+                            <div className={`${styles.statistics} ${styles.padd15}`}>
                                 <div className={styles.row}>
-                                    <div className={`${styles.skillItem} ${styles.padd15}`}>
-                                        <h5>One</h5>
-                                        <div className={`${styles.progress}`}>
-                                            <div className={`${styles.progressIn}`} style={{width: '76%'}}></div>
-                                            <div className={`${styles.skillPercent}`}>76%</div>
-                                        </div>
-                                    </div>
-
-                                    <div className={`${styles.skillItem} ${styles.padd15}`}>
-                                        <h5>Two</h5>
-                                        <div className={`${styles.progress}`}>
-                                            <div className={`${styles.progressIn}`} style={{width: '86%'}}></div>
-                                            <div className={`${styles.skillPercent}`}>86%</div>
-                                        </div>
-                                    </div>
-
-                                    <div className={`${styles.skillItem} ${styles.padd15}`}>
-                                        <h5>Three</h5>
-                                        <div className={`${styles.progress}`}>
-                                            <div className={`${styles.progressIn}`} style={{width: '66%'}}></div>
-                                            <div className={`${styles.skillPercent}`}>66%</div>
-                                        </div>
-                                    </div>
-
-                                    <div className={`${styles.skillItem} ${styles.padd15}`}>
-                                        <h5>Four</h5>
-                                        <div className={`${styles.progress}`}>
-                                            <div className={`${styles.progressIn}`} style={{width: '96%'}}></div>
-                                            <div className={`${styles.skillPercent}`}>96%</div>
-                                        </div>
-                                    </div>
-
-                                    <div className={`${styles.skillItem} ${styles.padd15}`}>
-                                        <h5>Five</h5>
-                                        <div className={`${styles.progress}`}>
-                                            <div className={`${styles.progressIn}`} style={{width: '76%'}}></div>
-                                            <div className={`${styles.skillPercent}`}>76%</div>
-                                        </div>
-                                    </div>
+                                    <ProgressBar
+                                        title="100% узнали о мерах поддержки"
+                                        percent={100}
+                                        peopleCount={596}
+                                        each={'чел.'}
+                                    />
+                                    <ProgressBar
+                                        title="55% обратились за поддержкой"
+                                        percent={55}
+                                        peopleCount={327}
+                                        each={'чел.'}
+                                    />
+                                    <ProgressBar
+                                        title="37% оказаных услуг"
+                                        percent={37}
+                                        peopleCount={122}
+                                        each={'ед.'}
+                                    />
+                                    <ProgressBar
+                                        title="38% прошли обучение"
+                                        percent={38}
+                                        peopleCount={125}
+                                        each={'чел.'}
+                                    />
+                                    <ProgressBar
+                                        title="4% открыли свой бизнес"
+                                        percent={4}
+                                        peopleCount={13}
+                                        each={'чел.'}
+                                    />
+                                    <ProgressBar
+                                        title="3% заключили социальный контракт"
+                                        percent={3}
+                                        peopleCount={10}
+                                        each={'чел.'}
+                                    />
                                 </div>
                             </div>
                         </div>
 
+
+                        {/*дорожная карта*/}
                         <div className={styles.row}>
-                            <div className={`${styles.education} ${styles.padd15}`}>
-                                <h3 className={`${styles.title}`}>First</h3>
+                            <div className={`${styles.roadmapLeft} ${styles.padd15}`}>
+                                <h3 className={`${styles.title}`}>2023 год</h3>
                                 <div className={styles.row}>
                                     <div className={`${styles.timelineBox} ${styles.padd15}`}>
                                         <div className={`${styles.timeline} ${styles.shadowDark}`}>
                                             <div className={`${styles.timelineItem}`}>
                                                 <div className={`${styles.circleDot}`}></div>
                                                 <h3 className={`${styles.timelineDate}`}>
-                                                    <i className={`${'fa'} ${'fa-calendar'}`}></i> 2013 - 2015
+                                                    <i className={`${'fa'} ${'fa-calendar'}`}></i> март
                                                 </h3>
-                                                <h4 className={`${styles.timelineTitle}`}>Lorem ipsum dolor sit.</h4>
-                                                <p className={`${styles.timelineText}`}>Lorem ipsum dolor sit amet,
-                                                    consectetur adipisicing elit. Aut dolor exercitationem iure omnis
-                                                    possimus, reiciendis saepe! Ducimus esse modi officiis?.</p>
+                                                <h4 className={`${styles.timelineTitle}`}>Онежский округ</h4>
+                                                <p className={`${styles.timelineText}`}>Приняли участие 26 чел.</p>
                                             </div>
 
                                             <div className={`${styles.timelineItem}`}>
                                                 <div className={`${styles.circleDot}`}></div>
                                                 <h3 className={`${styles.timelineDate}`}>
-                                                    <i className={`${'fa'} ${'fa-calendar'}`}></i> 2011 - 2014
+                                                    <i className={`${'fa'} ${'fa-calendar'}`}></i> апрель
                                                 </h3>
-                                                <h4 className={`${styles.timelineTitle}`}>Lorem ipsum.</h4>
-                                                <p className={`${styles.timelineText}`}>Lorem ipsum dolor sit amet,
-                                                    consectetur adipisicing elit. Accusantium atque beatae doloribus
-                                                    error ex fugiat ipsum iste laborum maiores molestiae non, optio quis
-                                                    quo, repudiandae, sint. Enim necessitatibus suscipit ullam!</p>
+                                                <h4 className={`${styles.timelineTitle}`}>Каргопольский и Няндомский
+                                                    округа</h4>
+                                                <p className={`${styles.timelineText}`}>Приняли участие 45 чел.</p>
                                             </div>
 
                                             <div className={`${styles.timelineItem}`}>
                                                 <div className={`${styles.circleDot}`}></div>
                                                 <h3 className={`${styles.timelineDate}`}>
-                                                    <i className={`${'fa'} ${'fa-calendar'}`}></i> 2007 - 2010
+                                                    <i className={`${'fa'} ${'fa-calendar'}`}></i> июнь
                                                 </h3>
-                                                <h4 className={`${styles.timelineTitle}`}>Lorem ipsum.</h4>
-                                                <p className={`${styles.timelineText}`}>Lorem ipsum dolor sit amet,
-                                                    consectetur adipisicing elit. Accusantium atque beatae doloribus
-                                                    error ex fugiat ipsum iste laborum maiores molestiae non, optio quis
-                                                    quo, repudiandae, sint. Enim necessitatibus suscipit ullam!</p>
+                                                <h4 className={`${styles.timelineTitle}`}>Верхнетоемский, Красноборский,
+                                                    Котласский округа и Ленский район</h4>
+                                                <p className={`${styles.timelineText}`}>Приняли участие 75 чел.</p>
+                                            </div>
+
+                                            <div className={`${styles.timelineItem}`}>
+                                                <div className={`${styles.circleDot}`}></div>
+                                                <h3 className={`${styles.timelineDate}`}>
+                                                    <i className={`${'fa'} ${'fa-calendar'}`}></i> июль
+                                                </h3>
+                                                <h4 className={`${styles.timelineTitle}`}>Пинежский округ</h4>
+                                                <p className={`${styles.timelineText}`}>Приняли участие 25 чел.</p>
+                                            </div>
+
+                                            <div className={`${styles.timelineItem}`}>
+                                                <div className={`${styles.circleDot}`}></div>
+                                                <h3 className={`${styles.timelineDate}`}>
+                                                    <i className={`${'fa'} ${'fa-calendar'}`}></i> август
+                                                </h3>
+                                                <h4 className={`${styles.timelineTitle}`}>Вельский, Коношский районы и
+                                                    Устьянский округ</h4>
+                                                <p className={`${styles.timelineText}`}>Приняли участие 59 чел.</p>
+                                            </div>
+
+                                            <div className={`${styles.timelineItem}`}>
+                                                <div className={`${styles.circleDot}`}></div>
+                                                <h3 className={`${styles.timelineDate}`}>
+                                                    <i className={`${'fa'} ${'fa-calendar'}`}></i> октябрь
+                                                </h3>
+                                                <h4 className={`${styles.timelineTitle}`}>Виноградовский, Шенкурский и
+                                                    Холмогорский округа</h4>
+                                                <p className={`${styles.timelineText}`}>Приняли участие 63 чел.</p>
+                                            </div>
+
+                                            <div className={`${styles.timelineItem}`}>
+                                                <div className={`${styles.circleDot}`}></div>
+                                                <h3 className={`${styles.timelineDate}`}>
+                                                    <i className={`${'fa'} ${'fa-calendar'}`}></i> ноябрь
+                                                </h3>
+                                                <h4 className={`${styles.timelineTitle}`}>Город Северодвинск</h4>
+                                                <p className={`${styles.timelineText}`}>Приняли участие 8 чел.</p>
+                                            </div>
+
+                                            <div className={`${styles.timelineItem}`}>
+                                                <div className={`${styles.circleDot}`}></div>
+                                                <h3 className={`${styles.timelineDate}`}>
+                                                    <i className={`${'fa'} ${'fa-calendar'}`}></i> декабрь
+                                                </h3>
+                                                <h4 className={`${styles.timelineTitle}`}>Город Новодвинск и Приморский
+                                                    округ</h4>
+                                                <p className={`${styles.timelineText}`}>Приняли участие 30 чел.</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div className={`${styles.experience} ${styles.padd15}`}>
-                                <h3 className={`${styles.title}`}>Second</h3>
+                            <div className={`${styles.roadmapRight} ${styles.padd15}`}>
+                                <h3 className={`${styles.title}`}>2024 год</h3>
                                 <div className={styles.row}>
                                     <div className={`${styles.timelineBox} ${styles.padd15}`}>
                                         <div className={`${styles.timeline} ${styles.shadowDark}`}>
                                             <div className={`${styles.timelineItem}`}>
                                                 <div className={`${styles.circleDot}`}></div>
                                                 <h3 className={`${styles.timelineDate}`}>
-                                                    <i className={`${'fa'} ${'fa-calendar'}`}></i> 2020 - Today
+                                                    <i className={`${'fa'} ${'fa-calendar'}`}></i> февраль
                                                 </h3>
-                                                <h4 className={`${styles.timelineTitle}`}>Lorem ipsum dolor.</h4>
-                                                <p className={`${styles.timelineText}`}>Lorem ipsum dolor sit amet,
-                                                    consectetur adipisicing elit. Aspernatur, consequatur corporis
-                                                    dolorem ea eos et, excepturi fugiat id iusto molestiae nemo nesciunt
-                                                    nisi nostrum repudiandae sed similique sint, veritatis voluptate.
-                                                    Incidunt laborum nulla repellendus suscipit.</p>
+                                                <h4 className={`${styles.timelineTitle}`}>Лешуконский и Мезенский
+                                                    округа</h4>
+                                                <p className={`${styles.timelineText}`}>Приняли участие 17 чел.</p>
                                             </div>
 
                                             <div className={`${styles.timelineItem}`}>
                                                 <div className={`${styles.circleDot}`}></div>
                                                 <h3 className={`${styles.timelineDate}`}>
-                                                    <i className={`${'fa'} ${'fa-calendar'}`}></i> 2017 - 2019
+                                                    <i className={`${'fa'} ${'fa-calendar'}`}></i> март
                                                 </h3>
-                                                <h4 className={`${styles.timelineTitle}`}>Lorem ipsum dolor sit.</h4>
-                                                <p className={`${styles.timelineText}`}>Lorem ipsum dolor sit amet,
-                                                    consectetur adipisicing elit. Aspernatur, consequatur corporis
-                                                    dolorem ea eos et, excepturi fugiat id iusto molestiae nemo nesciunt
-                                                    nisi nostrum repudiandae sed similique sint, veritatis voluptate.
-                                                    Incidunt laborum nulla repellendus suscipit.</p>
+                                                <h4 className={`${styles.timelineTitle}`}>Онежский округ</h4>
+                                                <p className={`${styles.timelineText}`}>Приняли участие 10 чел.</p>
                                             </div>
 
                                             <div className={`${styles.timelineItem}`}>
                                                 <div className={`${styles.circleDot}`}></div>
                                                 <h3 className={`${styles.timelineDate}`}>
-                                                    <i className={`${'fa'} ${'fa-calendar'}`}></i> 2014 - 2016
+                                                    <i className={`${'fa'} ${'fa-calendar'}`}></i> апрель
                                                 </h3>
-                                                <h4 className={`${styles.timelineTitle}`}>Lorem ipsum dolor.</h4>
-                                                <p className={`${styles.timelineText}`}>Lorem ipsum dolor sit amet.</p>
+                                                <h4 className={`${styles.timelineTitle}`}>Каргопольский и Няндомский
+                                                    округа</h4>
+                                                <p className={`${styles.timelineText}`}>Приняли участие 55 чел.</p>
                                             </div>
+
+                                            <div className={`${styles.timelineItem}`}>
+                                                <div className={`${styles.circleDot}`}></div>
+                                                <h3 className={`${styles.timelineDate}`}>
+                                                    <i className={`${'fa'} ${'fa-calendar'}`}></i> июнь
+                                                </h3>
+                                                <h4 className={`${styles.timelineTitle}`}>Ленский район, Вилегодский,
+                                                    Котласский, Красноборский и Верхнетоемский округа</h4>
+                                                <p className={`${styles.timelineText}`}>Приняли участие 79 чел.</p>
+                                            </div>
+
+                                            <div className={`${styles.timelineItem}`}>
+                                                <div className={`${styles.circleDot}`}></div>
+                                                <h3 className={`${styles.timelineDate}`}>
+                                                    <i className={`${'fa'} ${'fa-calendar'}`}></i> июль
+                                                </h3>
+                                                <h4 className={`${styles.timelineTitle}`}>Устьянский округ, Вельский и
+                                                    Коношский районы, Шенкурский округ</h4>
+                                                <p className={`${styles.timelineText}`}>Приняли участие 58 чел.</p>
+                                            </div>
+
+                                            <div className={`${styles.timelineItem}`}>
+                                                <div className={`${styles.circleDot}`}></div>
+                                                <h3 className={`${styles.timelineDate}`}>
+                                                    <i className={`${'fa'} ${'fa-calendar'}`}></i> август
+                                                </h3>
+                                                <h4 className={`${styles.timelineTitle}`}>Пинежский округ</h4>
+                                                <p className={`${styles.timelineText}`}>Приняли участие 14 чел.</p>
+                                            </div>
+
+                                            <div className={`${styles.timelineItem}`}>
+                                                <div className={`${styles.circleDot}`}></div>
+                                                <h3 className={`${styles.timelineDate}`}>
+                                                    <i className={`${'fa'} ${'fa-calendar'}`}></i> сентябрь
+                                                </h3>
+                                                <h4 className={`${styles.timelineTitle}`}>Плесецкий округ</h4>
+                                                <p className={`${styles.timelineText}`}>Приняли участие 18 чел.</p>
+                                            </div>
+
+                                            <div className={`${styles.timelineItem}`}>
+                                                <div className={`${styles.circleDot}`}></div>
+                                                <h3 className={`${styles.timelineDate}`}>
+                                                    <i className={`${'fa'} ${'fa-calendar'}`}></i> октябрь
+                                                </h3>
+                                                <h4 className={`${styles.timelineTitle}`}>Виноградовский округ</h4>
+                                                <p className={`${styles.timelineText}`}>Приняли участие 14 чел.</p>
+                                            </div>
+
+                                            <div className={`${styles.timelineItem}`}>
+                                                <div className={`${styles.circleDot}`}></div>
+                                                <h3 className={`${styles.timelineDate}`}>
+                                                    <i className={`${'fa'} ${'fa-calendar'}`}></i> ноябрь
+
+                                                </h3>
+                                                <h4 className={`${styles.timelineTitle}`}>Город Северодвинск</h4>
+                                                <p className={`${styles.timelineText}`}>Приняли участие 12 чел.</p>
+                                            </div>
+
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+
                     </div>
                 </div>
             </div>
