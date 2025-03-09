@@ -10,7 +10,7 @@ interface TimeLeft {
 }
 
 const CountdownTimer: React.FC = () => {
-    const [activeLink, setActiveLink] = useState<string>('#section-6');
+    const [activeLink, setActiveLink] = useState<string>('#section-5');
 
     // Устанавливаем время события на 7 дней вперед
     const eventDate = new Date(new Date().getFullYear(), 2, 28, 10, 0, 0);
@@ -56,7 +56,7 @@ const CountdownTimer: React.FC = () => {
     };
 
     return (
-        <div className={`${styles.countdown} ${activeLink === '#section-6' ? styles.active : ''}`}>
+        <div className={`${styles.countdown} ${activeLink === '#section-5' ? styles.active : ''}`}>
             <h1 className={styles.h1}>Следующий бизнес десант состоится 28 марта в Онежском округе <br/><br/>
                 <span>через:</span></h1>
             <div className={styles.timer}>

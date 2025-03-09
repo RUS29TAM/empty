@@ -13,10 +13,10 @@ import {GrCertificate} from "react-icons/gr";
 import {GiCargoShip} from "react-icons/gi";
 
 const Service = () => {
-    const [activeLink, setActiveLink] = useState<string>('#section-3'); // Состояние для активной ссылки
+    const [activeLink, setActiveLink] = useState<string>('#section-2'); // Состояние для активной ссылки
 
     return (
-        <section className={`${styles.service} ${activeLink === '#section-3' ? styles.active : ''} `} id={"service"}>
+        <section className={`${styles.service} ${activeLink === '#section-2' ? styles.active : ''} `} id={"service"}>
             <div className={`${styles.container}`}>
                 <div className={styles.row}>
                     <div className={`${styles.sectionTitle} ${styles.padd15}`}>

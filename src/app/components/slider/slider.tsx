@@ -4,7 +4,7 @@ import styles from './slider.module.css';
 import slideData from './slideData';
 
 const Slider = () => {
-    const [activeLink, setActiveLink] = useState<string>('#section-5');
+    const [activeLink, setActiveLink] = useState<string>('#section-4');
     const [currentSlide, setCurrentSlide] = useState(1);
 
     const handleChangeSlide = (slideNumber: React.SetStateAction<number>) => {
@@ -83,7 +83,7 @@ const Slider = () => {
     }, [currentSlide]);
 
     return (
-        <div className={`${styles.container} ${activeLink === '#section-5' ? styles.active : ''}`}
+        <div className={`${styles.container} ${activeLink === '#section-4' ? styles.active : ''}`}
              ref={sliderContainerRef}
              onTouchStart={handleTouchStart}
              onTouchMove={handleTouchMove}

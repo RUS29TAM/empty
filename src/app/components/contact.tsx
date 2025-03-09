@@ -2,10 +2,10 @@
 import React, {useState} from 'react';
 import styles from "@/app/page.module.css";
 const Contact = () => {
-    const [activeLink, setActiveLink] = useState<string>('#section-7'); // Состояние для активной ссылки
+    const [activeLink, setActiveLink] = useState<string>('#section-6'); // Состояние для активной ссылки
 
     return (
-        <section className={`${styles.contact} ${activeLink === '#section-7' ? styles.active : ''} `} id={"contact"}>
+        <section className={`${styles.contact} ${activeLink === '#section-6' ? styles.active : ''} `} id={"contact"}>
         <div className={`${styles.container}`}>
             <div className={styles.row}>
                 <div className={`${styles.sectionTitle} ${styles.padd15}`}>

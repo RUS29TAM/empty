@@ -37,13 +37,13 @@ const Home = () => {
 
     // Список секций
     const sections = [
-        { id: 1, title: 'Главная', page: <Hero />, icon: <BsHouse /> },
-        { id: 2, title: 'О проекте', page: <About />, icon: <BsTextLeft   />},
-        { id: 3, title: 'Услуги', page: <Service />, icon: <BsGear /> },
-        { id: 4, title: 'Видео', page: <Video />, icon: <BsCameraReels /> },
-        { id: 5, title: 'Фото', page: <Slider />, icon: <BsCamera /> },
-        { id: 6, title: 'Регистрация', page: <CountdownTimer />, icon: <BsTicketPerforated /> },
-        { id: 7, title: 'Контакты', page: <Contact />, icon: <BsTelephoneInbound /> },
+        { id: 0, title: 'Главная', page: <Hero />, icon: <BsHouse /> },
+        { id: 1, title: 'О проекте', page: <About />, icon: <BsTextLeft   />},
+        { id: 2, title: 'Услуги', page: <Service />, icon: <BsGear /> },
+        { id: 3, title: 'Видео', page: <Video />, icon: <BsCameraReels /> },
+        { id: 4, title: 'Фото', page: <Slider />, icon: <BsCamera /> },
+        { id: 5, title: 'Регистрация', page: <CountdownTimer />, icon: <BsTicketPerforated /> },
+        { id: 6, title: 'Контакты', page: <Contact />, icon: <BsTelephoneInbound /> },
     ];
 
     // Функция для обработки клика по пункту меню
