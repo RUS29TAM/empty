@@ -7,14 +7,14 @@
     /*background-color: transparent;*/
     font-family: 'Arial', sans-serif;
     user-select: none;
-    color: var(--text-black900);
 }
 
 .h1 {
     font-size: 2rem;
     margin-bottom: 80px;
-    color: #fff;
+    color: var(--skin-color);
     text-transform: uppercase;
+    text-shadow: var(--textShadow);
 }
 
 .timer {
@@ -48,7 +48,7 @@
     text-shadow: 0 0 15px #000;
     justify-content: center;
     align-items: center;
-    color: #f1683a;
+    color: var(--skin-color);
     font-weight: bold;
 }
 
@@ -58,6 +58,7 @@
 
 .label {
     font-size: 3rem;
-    /*color: rgba(127, 76, 255, 0.5);*/
     /*background: rgba(127, 76, 255, 0.2);*/
 }
+
+
