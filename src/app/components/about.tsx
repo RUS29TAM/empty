@@ -1,5 +1,5 @@
 'use client'
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useState} from 'react';
 import styles from "@/app/page.module.css";
 import ProgressBar from "@/app/components/progress-bar/progress-bar";
 
