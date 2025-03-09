@@ -13,21 +13,21 @@ const Contact = () => {
                 </div>
             </div>
 
-            <h3 className={`${styles.contactTitle} ${styles.padd15}`}>Any Question? Contact us!</h3>
-            <h4 className={`${styles.contactSubtitle} ${styles.padd15}`}>I'm at your service</h4>
+            <h3 className={`${styles.contactTitle} ${styles.padd15}`}>Есть вопросы? Свяжитесь с нами!</h3>
+            <h4 className={`${styles.contactSubtitle} ${styles.padd15}`}>К вашим услугам</h4>
 
             <div className={styles.row}>
                 <div className={`${styles.contactInfoItem} ${styles.padd15}`}>
                     <div className={`${styles.icon}`}><i className={`${styles.fa} ${'fa-phone'}`}></i></div>
-                    <h4>Call us on</h4>
-                    <p>+92 333 054 5218</p>
+                    <h4>Телефон</h4>
+                    <p>+8 800 100 7000</p>
                 </div>
 
 
                 <div className={`${styles.contactInfoItem} ${styles.padd15}`}>
                     <div className={`${styles.icon}`}><i className={`${'fa'} ${'fa-map-marker-alt'}`}></i></div>
-                    <h4>Office</h4>
-                    <p>São Paulo</p>
+                    <h4>Офис</h4>
+                    <p>Набережная Северной Двины, 71</p>
                 </div>
 
                 <div className={`${styles.contactInfoItem} ${styles.padd15}`}>
@@ -38,12 +38,12 @@ const Contact = () => {
 
                 <div className={`${styles.contactInfoItem} ${styles.padd15}`}>
                     <div className={`${styles.icon}`}><i className={`${'fa'} ${'fa-globe'}`}></i></div>
-                    <h4>Website</h4>
+                    <h4>Сайт</h4>
                     <p>www.domain.com</p>
                 </div>
             </div>
-            <h3 className={`${styles.contactTitle} ${styles.padd15}`}>Send me an email</h3>
-            <h4 className={`${styles.contactSubtitle} ${styles.padd15}`}>I'll contact you as soon as possible!</h4>
+            <h3 className={`${styles.contactTitle} ${styles.padd15}`}>Отправьте нам сообщение</h3>
+            <h4 className={`${styles.contactSubtitle} ${styles.padd15}`}>Мы свяжемся с вами как только у нас появиться возможность</h4>
 
             <div className={styles.row}>
                 <div className={`${styles.contactForm} ${styles.padd15}`}>
@@ -81,7 +81,7 @@ const Contact = () => {
                     <div className={styles.row}>
                         <div className={`${styles.formItem} ${styles.col12} ${styles.padd15}`}>
                             <div className={`${styles.formGroup}`}>
-                                <button type="submit" className={`${styles.btn}`}>Send Message</button>
+                                <button type="submit" className={`${styles.btn}`}>Отправить</button>
                             </div>
                         </div>
                     </div>
