@@ -16,6 +16,7 @@
     transition: all .8s ease;
 }
 
+
 .section.backSection { z-index: 1; }
 .section.active { z-index: 2; opacity: 1; animation: slideSection 1s ease;  }
 @keyframes slideSection {
@@ -26,7 +27,7 @@
 /*.main-content { padding-left: 270px; }*/
 .padd15 { padding-left: 15px; padding-right: 15px; }
 .container { max-width: 1100px; width: 100%; margin: auto; }
-.section .container { padding-top: 60px; padding-bottom: 70px; }
+/*.section .container { padding-top: 60px; padding-bottom: 70px; }*/
 .sectionTitle { flex: 0 0 100%; max-width: 100%; margin-bottom: 60px; }
 .sectionTitle h2 { font-size: 40px; color: var(--text-black900); font-weight: 700; position: relative; }
 .sectionTitle h2::before {
@@ -107,7 +108,24 @@
     right: 0;
     /*border-radius: 50%;*/
 }
-.aside .logo a span { font-family: 'Clicker Script', cursive; font-size: 40px; }
+.aside .logo a span { font-family: 'Marck Script', cursive; font-size: 40px; color: var(--skin-color); animation: gradient-change 2s linear infinite alternate; background: linear-gradient(
+    /*
+      in oklch produces more vibrant gradient results
+      learn more https://developer.chrome.com/docs/css-ui/access-colors-spaces#color_interpolation
+    */
+        to right in oklch,
+            /* use the variables in a gradient (or wherever!) */
+        var(--＠color-1),
+        var(--＠color-2)
+);
+
+    /* old browser support */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* modern browser version */
+    background-clip: text;
+    color: transparent;}
 .aside .nav { margin-top: 50px; }
 .aside .nav li { margin-bottom: 20px; display: block; color: var(--navIconColor) }
 .aside .nav li a {text-transform: uppercase; letter-spacing: 0.15em; font-size: 16px; font-weight: 600; display: block; color: var(--text-black900); padding: 5px 15px; border-bottom: 1px solid var(--bg-black50); width: 100% }
@@ -157,13 +175,14 @@
 /* HOME */
 
 .home { min-height: 100vh; display: flex; color: var(--text-black900); }
-.home .homeInfo { flex: 0 0 60%; max-width: 60%; text-shadow: var(--textShadow)}
+.home .homeInfo { flex: 0 0 80%; max-width: 80%; text-shadow: var(--textShadow)}
 h3.hello {   font-family: "Jura", serif; font-size: 28px; margin: 15px 0; }
 h3.hello span { font-family: 'Marck Script', cursive; font-size: 50px; font-weight: 700; color: var(--skin-color); }
 h3.profession { font-size: 30px; margin: 15px 0; font-family: 'Jura', serif}
+.p {font-family: "Jura", serif; margin: 15px 0;}
 .typing { color: var(--skin-color); font-family: 'Jura', serif}
-.homeInfo p { margin-bottom: 70px; font-size: 20px; color: var(--text-black700); font-family: 'Jura', serif;  font-weight: 300; font-optical-sizing: auto; font-style: normal; text-align: justify-all   }
-.home .homeImg { flex: 0 0 40%; max-width: 40%; text-align: center;}
+.homeInfo p { margin-bottom: 70px; font-size: 20px; color: var(--text-black700); font-family: 'Jura', serif;  font-weight: 300; font-optical-sizing: auto; font-style: normal; text-align: justify-all; }
+.home .homeImg { flex: 0 0 20%; max-width: 20%; text-align: center;}
 .homeImg::after {
     content: '';
     position: absolute;
@@ -172,7 +191,7 @@ h3.profession { font-size: 30px; margin: 15px 0; font-family: 'Jura', serif}
     border-bottom: 10px solid var(--skin-color);
     border-right: 10px solid var(--skin-color);
     right: 20px;
-    bottom: -40px;
+    bottom: -5px;
     border-radius: 50%;
     box-shadow: 10px 5px 10px var(--skin-color);
     /*box-shadow: 55px 50px 50px 10px var(--skin-coub);*/
@@ -205,30 +224,65 @@ h3.profession { font-size: 30px; margin: 15px 0; font-family: 'Jura', serif}
 .about .aboutContent .personalInfo .infoItem p span { font-weight: 400; color: var(--text-black700); margin-left: 4px; display: inline-block; }
 .about .aboutContent .personalInfo .buttons { margin-top: 30px; }
 .about .aboutContent .personalInfo .buttons .btn { margin-top: 10px; }
-.about .aboutContent .skills { flex: 0 0 40%; max-width: 40%; margin-top: 40px; }
-.about .aboutContent .skills .skillItem { flex: 0 0 100%; max-width: 100%; margin-bottom: 25px; }
-.about .aboutContent .skills .skillItem h5 { line-height: 40px; font-weight: 600; font-size: 16px; color: var(--text-black900); text-transform: capitalize; }
-.about .aboutContent .skills .skillItem .skillPercent { position: absolute; right: 0; color: var(--text-black900); top: -40px; font-weight: 400; line-height: 40px; }
-.about .aboutContent .skills .skillItem .progress { background-color: var(--bg-black50); height: 7px; border-radius: 4px; width: 100%; position: relative; }
-.about .aboutContent .skills .skillItem .progress .progressIn { position: absolute; left: 0; top: 0; height: 100%; border-radius: 4px; background-color: var(--skin-color); }
-.about .aboutContent .education, .about .aboutContent .experience { flex: 0 0 50%; max-width: 50%; margin-top: 30px; }
+/*.about .aboutContent .statistics { flex: 0 0 40%; max-width: 40%; margin-top: 40px; }*/
+.about .aboutContent .statistics {max-width: 100%; margin-top: 40px; }
+.about .aboutContent .statistics .skillItem { flex: 0 0 100%; max-width: 100%; margin-bottom: 25px; }
+.about .aboutContent .statistics .skillItem h5 { line-height: 40px; font-weight: 600; font-size: 16px; color: var(--text-black900); /*text-transform: capitalize;*/ }
+.about .aboutContent .statistics .skillItem .skillPercent { position: absolute; right: 0; color: var(--text-black900); top: -40px; font-weight: 400; line-height: 40px; }
+.about .aboutContent .statistics .skillItem .progress { background-color: var(--bg-black50); height: 7px; border-radius: 4px; width: 100%; position: relative; }
+.about .aboutContent .statistics .skillItem .progress .progressIn { position: absolute; left: 0; top: 0; height: 100%; border-radius: 4px; background-color: var(--skin-color); }
+.about .aboutContent .roadmapLeft, .about .aboutContent .roadmapRight { flex: 0 0 50%; max-width: 50%; margin-top: 30px; }
 .about .aboutContent h3.title { font-size: 24px; margin-bottom: 30px; font-weight: 700; color: var(--text-black900); }
 .about .aboutContent .timelineBox { flex: 0 0 100%; max-width: 100%; }
-.about .aboutContent .timeline { background-color: var(--bg-black100); padding: 30px 15px; border: 1px solid var(--bg-black50); border-radius: 10px; width: 100%; position: relative; }
+.about .aboutContent .timeline { background-color: var(--bg-black100); padding: 30px 15px; border: 1px solid var(--bg-black50); border-radius: 10px; width: 100%; position: relative;}
 .about .aboutContent .timeline .timelineItem { position: relative; padding-left: 37px; padding-bottom: 50px; }
 .about .aboutContent .timeline .timelineItem:last-child { padding-bottom: 0; }
 .about .aboutContent .timeline .timelineItem::before { content: ''; width: 1px; position: absolute; height: 100%; left: 7px; top: 0; background-color: var(--skin-color); }
 .about .aboutContent .timeline .circleDot { position: absolute; left: 0; top: 0; height: 15px; width: 15px; border-radius: 50%; background-color: var(--skin-color); }
 .about .aboutContent .timeline .timelineDate { font-weight: 400; font-size: 14px; margin-bottom: 12px; color: var(--text-black700); }
 .about .aboutContent .timeline .timelineDate .fa { margin-right: 5px;}
-.about .aboutContent .timeline .timelineTitle { font-weight: 700; font-size: 18px; margin-bottom: 15px; text-transform: capitalize; color: var(--text-black900); }
+.about .aboutContent .timeline .timelineTitle { font-weight: 700; font-size: 18px; margin-bottom: 15px; /*text-transform: capitalize;*/ color: var(--text-black900); }
 .about .aboutContent .timeline .timelineText { line-height: 25px; font-size: 16px; text-align: justify; color: var(--text-black700); }
 
 /* SERVICE */
 
-.service .container { padding-bottom: 40px; }
+.service .container { padding-bottom: 40px;}
 /*.service .container:hover .serviceItemInner:not(:hover) { scale: .95; background: var(--iconCardsShadow); box-shadow: var(--iconCardsShadow);}*/
-.service .serviceItem { margin-bottom: 30px; flex: 0 0 33.33%; max-width: 33.33%; }
+.service .serviceItem { margin-bottom: 30px; flex: 0 0 33.33%; max-width: 33.33%;}
+
+/*@property --gradient-angle {*/
+/*    syntax: "<angle>";*/
+/*    initial-value: 0turn;*/
+/*    inherits: false;*/
+/*}*/
+/*.service .serviceItem .serviceItemInner:hover {*/
+/*    animation: 2s gradient-angle infinite linear;*/
+/*    border: 2px solid transparent;*/
+/*    background-image: linear-gradient(#584827, #2d230f),*/
+/*    conic-gradient(*/
+/*            from var(--gradient-angle),*/
+/*            #584827 0%,*/
+/*            #c7a03c 37%,*/
+/*            #f9de90 30%,*/
+/*            #c7a03c 33%,*/
+/*            #584827 40%,*/
+/*            #584827 50%,*/
+/*            #c7a03c 77%,*/
+/*            #f9de90 80%,*/
+/*            #c7a03c 83%,*/
+/*            #584827 90%*/
+/*    );*/
+
+/*    background-clip: padding-box, border-box;*/
+/*    background-origin: padding-box, border-box;*/
+/*}*/
+
+/*@keyframes gradient-angle {*/
+/*    to {*/
+/*        --gradient-angle: 1turn;*/
+/*    }*/
+/*}*/
+
 
 .service .serviceItem .serviceItemInner { height: 100%; background-color: var(--bg-black100); border: var(--bg-black50); border-radius: 10px; padding: 30px 15px; text-align: center; transition: all .3s ease;}
 .service .serviceItem .serviceItemInner:hover { box-shadow: var(--serviceItemInner) }
@@ -246,6 +300,10 @@ h3.profession { font-size: 30px; margin: 15px 0; font-family: 'Jura', serif}
 .portfolio .portfolioHeading h2 { color: var(--text-black900); font-weight: 500; }
 .portfolio .portfolioItem { flex: 0 0 33.33%; max-width: 33.33%; margin-bottom: 30px; }
 .portfolio .portfolioItemInner { border: 6px solid var(--bg-black100); border-radius: 10px; overflow: hidden; cursor: pointer; }
+
+.portfolio .portfolioItemInner:hover { border: 6px solid var(--skin-color); border-radius: 10px; overflow: hidden; cursor: pointer; transition: 0.7s; box-shadow: 0 0 1px 1px var(--skin-color)}
+
+
 .portfolio .portfolioItemInner .portfolioImg img { width: 100%; display: block; }
 
 /* CONTACT */
@@ -297,7 +355,7 @@ h3.profession { font-size: 30px; margin: 15px 0; font-family: 'Jura', serif}
     .home .homeInfo { flex: 0 0 100%; max-width: 100%; }
     .home .homeImg { display: none; }
 
-    .about .aboutContent .skills, .about .aboutContent .personalInfo, .about .aboutContent .experience, .about .aboutContent .education { flex: 0 0 100%; max-width: 100%; }
+    .about .aboutContent .statistics, .about .aboutContent .personalInfo, .about .aboutContent .roadmapRight, .about .aboutContent .roadmapLeft { flex: 0 0 100%; max-width: 100%; }
 
     .contact .contactInfoItem, .portfolio .portfolioItem, .service .serviceItem { flex: 0 0 50%; max-width: 50%; }
 }
@@ -310,6 +368,10 @@ h3.profession { font-size: 30px; margin: 15px 0; font-family: 'Jura', serif}
 @media (max-width: 460px) {
 
     .contact .contactInfoItem { flex: 0 0 100%; max-width: 100%; }
+
+    .about .aboutContent .statistics .skillItem h5 { line-height: 40px; font-weight: 600; font-size: 12px; color: var(--text-black900); /*text-transform: capitalize;*/ }
+    .about .aboutContent .statistics .skillItem .skillPercent { top: -40px; font-weight: 400; line-height: 40px; font-size: 14px; }
+
 }
 
 /* Style Switcher */
@@ -398,3 +460,56 @@ color-5.css
 }
 
 */
+
+
+@property --＠color-1 {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: hsl(98 100% 62%);
+}
+
+@property --＠color-2 {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: hsl(204 100% 59%);
+}
+
+/* keyframes that change the color variable */
+@keyframes gradient-change {
+    to {
+        --＠color-1: hsl(210 100% 59%);
+        --＠color-2: hsl(310 100% 59%);
+    }
+}
+
+.name {
+    /* apply variable changes over time */
+    animation: gradient-change 2s linear infinite alternate;
+
+    text-shadow: 10px 5px 10px #fff;
+
+    background: linear-gradient(
+        /*
+          in oklch produces more vibrant gradient results
+          learn more https://developer.chrome.com/docs/css-ui/access-colors-spaces#color_interpolation
+        */
+            to right in oklch,
+                /* use the variables in a gradient (or wherever!) */
+            var(--＠color-1),
+            var(--＠color-2)
+    );
+
+    /* old browser support */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* modern browser version */
+    background-clip: text;
+    color: transparent;
+}
+
+.portfolioImg .video {
+    width: 100%;
+    height: auto;
+    max-height: 400px; /* Укажите необходимую высоту */
+}
