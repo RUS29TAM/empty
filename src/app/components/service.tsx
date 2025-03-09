@@ -2,25 +2,21 @@
 import React, {useState} from 'react';
 import styles from "@/app/page.module.css";
 import {
-    BsBookmarkStar,
-    BsFiletypeDocx, BsFillMortarboardFill, BsFillTrainFreightFrontFill,
     BsInfoCircle, BsMegaphone,
     BsPcDisplayHorizontal,
-    BsShop,
-    BsShopWindow, BsStack, BsTrainFreightFront
+    BsShopWindow,
 } from "react-icons/bs";
-import {PiStudent, PiStudentLight, PiStudentThin, PiTrademark, PiTrademarkLight} from "react-icons/pi";
+import {PiStudent, PiTrademarkLight} from "react-icons/pi";
 import {HiOutlineSquare3Stack3D} from "react-icons/hi2";
 import {SiHelpscout} from "react-icons/si";
 import {GrCertificate} from "react-icons/gr";
-import {LiaTrademarkSolid} from "react-icons/lia";
 import {GiCargoShip} from "react-icons/gi";
 
 const Service = () => {
-    const [activeLink, setActiveLink] = useState<string>('#home'); // Состояние для активной ссылки
+    const [activeLink, setActiveLink] = useState<string>('#section-3'); // Состояние для активной ссылки
 
     return (
-        <section className={`${styles.service} ${activeLink === '#section-2' ? styles.active : ''} `} id={"service"}>
+        <section className={`${styles.service} ${activeLink === '#section-3' ? styles.active : ''} `} id={"service"}>
             <div className={`${styles.container}`}>
                 <div className={styles.row}>
                     <div className={`${styles.sectionTitle} ${styles.padd15}`}>
