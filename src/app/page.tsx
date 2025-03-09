@@ -4,11 +4,21 @@ import {useEffect, useState} from "react";
 import About from "@/app/components/about";
 import Hero from "@/app/components/hero";
 import Service from '@/app/components/service';
-import Portfolio from '@/app/components/portfolio'
+import Video from '@/app/components/video'
 import Contact from '@/app/components/contact'
-import {BsBriefcase, BsDatabase, BsGear, BsHouse, BsTelephoneInbound, BsTextLeft} from "react-icons/bs";
+import {
+    BsBriefcase,
+    BsCamera,
+    BsCameraReels,
+    BsDatabase,
+    BsGear,
+    BsHouse,
+    BsTelephoneInbound,
+    BsTextLeft, BsTicketPerforated
+} from "react-icons/bs";
 import StyleSwitcher from "@/app/components/style-switcher";
 import CountdownTimer from "@/app/components/countdown-timer/countdown-timer";
+import Slider from "@/app/components/slider/slider";
 
 
 
@@ -28,11 +38,12 @@ const Home = () => {
     // Список секций
     const sections = [
         { id: 1, title: 'Главная', page: <Hero />, icon: <BsHouse /> },
-        { id: 2, title: 'О нас', page: <About />, icon: <BsTextLeft   />},
+        { id: 2, title: 'О проекте', page: <About />, icon: <BsTextLeft   />},
         { id: 3, title: 'Услуги', page: <Service />, icon: <BsGear /> },
-        { id: 4, title: 'Портфолио', page: <Portfolio />, icon: <BsBriefcase /> },
-        { id: 5, title: 'Контакты', page: <Contact />, icon: <BsTelephoneInbound /> },
-        { id: 6, title: 'Регистрация', page: <CountdownTimer />, icon: <BsDatabase  /> },
+        { id: 4, title: 'Видео', page: <Video />, icon: <BsCameraReels /> },
+        { id: 5, title: 'Фото', page: <Slider />, icon: <BsCamera /> },
+        { id: 6, title: 'Регистрация', page: <CountdownTimer />, icon: <BsTicketPerforated /> },
+        { id: 7, title: 'Контакты', page: <Contact />, icon: <BsTelephoneInbound /> },
     ];
 
     // Функция для обработки клика по пункту меню
@@ -83,11 +94,11 @@ const Home = () => {
 
     return (
 
-    <div className={styles.page}>
+    <div className={styles.page} >
             <div className={styles.mainContainer}>
                 <div className={`${styles.aside} ${isAsideOpen ? styles.open : ''}`}>
                     <div className={styles.logo}>
-                        <a href="#"><span>A</span>tlas</a>
+                        <a href="#"><span>B</span><span>T</span></a>
                     </div>
 
                     <div onClick={asideSectionTogglerBtn} className={styles.navToggler}>
