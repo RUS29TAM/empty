@@ -11,7 +11,7 @@ interface TimeLeft {
 
 const CountdownTimer: React.FC = () => {
     // Устанавливаем время события на 7 дней вперед
-    const eventDate = new Date(new Date().getFullYear(), 1, 25, 10, 0, 0);
+    const eventDate = new Date(new Date().getFullYear(), 2, 28, 10, 0, 0);
     const calculateTimeLeft = (): TimeLeft => {
         const now = new Date();
         const difference = eventDate.getTime() - now.getTime();
@@ -55,9 +55,10 @@ const CountdownTimer: React.FC = () => {
 
     return (
         <div className={styles.countdown}>
-            <h1 className={styles.h1}>Следующий бизнес десант состоится в Виноградовском округе через:</h1>
+            <h1 className={styles.h1}>Следующий бизнес десант состоится 28 марта в Онежском округе <br/><br/>
+                <span>через:</span></h1>
             <div className={styles.timer}>
-                <div
+                <div id={'count_days'}
                     className={styles.timeBox}
                     style={{
                         // background: `conic-gradient(#101010 0deg, #7f4cff ${getGradientPercentage(timeLeft.days, 7)}deg, transparent 0deg)`
@@ -68,7 +69,7 @@ const CountdownTimer: React.FC = () => {
                         {getWordDeclension(timeLeft.days, ['день', 'дня', 'дней'])}
                     </span>
                 </div>
-                <div
+                <div id={'count_hours'}
                     className={styles.timeBox}
                     style={{
                         // background: `conic-gradient(#101010 0deg, #7f4cff ${getGradientPercentage(timeLeft.hours, 24)}deg, transparent 0deg)`
@@ -79,7 +80,7 @@ const CountdownTimer: React.FC = () => {
                         {getWordDeclension(timeLeft.hours, ['час', 'часа', 'часов'])}
                     </span>
                 </div>
-                <div
+                <div id={'count_minute'}
                     className={styles.timeBox}
                     style={{
                         // background: `conic-gradient(#101010 0deg, #7f4cff ${getGradientPercentage(timeLeft.minutes, 60)}deg, transparent 0deg)`
@@ -90,10 +91,11 @@ const CountdownTimer: React.FC = () => {
                         {getWordDeclension(timeLeft.minutes, ['минута', 'минуты', 'минут'])}
                     </span>
                 </div>
-                <div
+                <div id={'count_seconds'}
                     className={styles.timeBox}
                     style={{
-                        background: `conic-gradient(rgba(127, 76, 255, 0.1) 0deg,  rgba(127, 76, 255, 0.3) ${getGradientPercentage(timeLeft.seconds, 60)}deg, transparent 0deg)`
+                        borderRadius: '50%', color: 'rgba(171,255,137,0.5)',
+                        background: `conic-gradient(rgba(127, 76, 255, 0.1) 0deg,  var(--skin-color) ${getGradientPercentage(timeLeft.seconds, 60)}deg, transparent 0deg)`
                     }}
                 >
                     <span className={styles.number}>{timeLeft.seconds}</span>
