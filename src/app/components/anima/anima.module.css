@@ -32,7 +32,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    content: "";
+    content: '';
     background: var(--color);
     width: calc(100% - 2vmin);
     height: calc(100% - 2vmin);
