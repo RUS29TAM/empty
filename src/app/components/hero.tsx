@@ -4,10 +4,10 @@ import styles from "@/app/page.module.css";
 import Anima from "@/app/components/anima/anima";
 
 const Hero = () => {
-    const [activeLink, setActiveLink] = useState<string>('#home'); // Состояние для активной ссылки
+    const [activeLink, setActiveLink] = useState<string>('#section-1'); // Состояние для активной ссылки
 
     return (
-        <section className={`${styles.home} ${activeLink === '#section-0' ? styles.active : ''}`} id={"home"}>
+        <section className={`${styles.home} ${activeLink === '#section-1' ? styles.active : ''}`} id={"home"}>
             <div className={styles.container}>
                 <div className={styles.row}>
                     <div className={`${styles.homeInfo} ${styles.padd15}`}>
