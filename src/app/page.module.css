@@ -247,7 +247,7 @@ h3.profession { font-size: 30px; margin: 15px 0; font-family: 'Jura', serif}
 /* SERVICE */
 
 .service .container { padding-bottom: 40px;}
-/*.service .container:hover .serviceItemInner:not(:hover) { scale: .95; background: var(--iconCardsShadow); box-shadow: var(--iconCardsShadow);}*/
+/*.offer .container:hover .serviceItemInner:not(:hover) { scale: .95; background: var(--iconCardsShadow); box-shadow: var(--iconCardsShadow);}*/
 .service .serviceItem { margin-bottom: 30px; flex: 0 0 33.33%; max-width: 33.33%;}
 
 /*@property --gradient-angle {*/
@@ -255,7 +255,7 @@ h3.profession { font-size: 30px; margin: 15px 0; font-family: 'Jura', serif}
 /*    initial-value: 0turn;*/
 /*    inherits: false;*/
 /*}*/
-/*.service .serviceItem .serviceItemInner:hover {*/
+/*.offer .serviceItem .serviceItemInner:hover {*/
 /*    animation: 2s gradient-angle infinite linear;*/
 /*    border: 2px solid transparent;*/
 /*    background-image: linear-gradient(#584827, #2d230f),*/
@@ -512,4 +512,28 @@ color-5.css
     width: 100%;
     height: auto;
     max-height: 400px; /* Укажите необходимую высоту */
+}
+
+
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px; /* Высота iframe */
+    background-color: var(--back-ground) /* Цвет фона */
+}
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #09f;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
 }
