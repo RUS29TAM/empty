@@ -10,7 +10,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: var(--color);
+    /*background: var(--color);*/
     width: 20vmin;
     height: 20vmin;
     border-radius: 2vmin;
@@ -126,10 +126,15 @@
 }
 
 .pInCube {
-    font-family: 'Marck Script', cursive; font-size: 25px; font-weight: 600; color: #302E4D;
-    text-shadow: 10px 5px 10px #302E4D;
+    /*font-family: 'Marck Script', cursive; font-size: 25px; font-weight: 600; color: #302E4D;*/
+    /*text-shadow: 10px 5px 10px #302E4D;*/
     transform: rotate(-45deg);
-    animation: animateText 4s ease-in-out 4s infinite;
+    /*animation: animateText 4s ease-in-out 4s infinite;*/
+    width: 100%;
+    height: 100%;
+    background-image: url('https://3.downloader.disk.yandex.ru/preview/23d2a5055b5146d12f5b71a51c621fb3060a8d561150c4253c0683ab565dd7e0/inf/QDzShTspQrbHbjuFybifcsUt2qL1218qoJA8YX6n-O1A28zYwXeYhOVoQLSkMAbOZvrye4E_4S1NS2RZzduCVQ%3D%3D?uid=1130000063415651&filename=%D0%9C%D0%91.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=1130000063415651&tknv=v2&size=1905x911');
+    background-size: cover;
+    background-position: center;
 }
 @keyframes animateText {
     5%, 45% {
