@@ -19,7 +19,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ percent, peopleCount,each, ti
         setProgress(0);
         setCurrentPeopleCount(0);
         // Анимация прогресса до целевого значения
-        const duration = 10000; // Длительность анимации в миллисекундах
+        const duration = 2500; // Длительность анимации в миллисекундах
         const startTime = performance.now();
 
         const animate = (currentTime: number) => {
