@@ -5,10 +5,9 @@ import ProgressBar from "@/app/components/progress-bar/progress-bar";
 
 const About = () => {
     const [activeLink, setActiveLink] = useState<string>('#section-1'); // Состояние для активной ссылки
-    const [progress, setProgress] = useState(0); // Начальное значение прогресса
 
     return (
-        <section className={`${styles.about} ${activeLink === '#section-1' ? styles.active : ''} `} id={"about"}>
+        <section className={`${styles.about} ${styles.section} ${activeLink === '#section-1' ? styles.active : ''} `} id={"about"}>
             <div className={styles.container}>
                 <div className={styles.row}>
                     <div className={`${styles.sectionTitle} ${styles.padd15} ${styles.alternateStyle}`}>
