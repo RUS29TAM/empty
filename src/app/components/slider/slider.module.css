@@ -1,13 +1,50 @@
-.container {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-    transform: translateX(-30px);
-    background: var(--skin-color);
+.section {
+    background: var(--bg-black900);
+    min-height: 100vh;
+    /*display: block;*/
+    opacity: 0;
+    padding: 0 30px;
+    position: fixed;
+    left: 270px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: all .8s ease;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
 }
+
+
+.section.backSection { z-index: 1; }
+.section.active { z-index: 2; opacity: 1; animation: slideSection 1s ease;  }
+@keyframes slideSection {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(0%); }
+}
+
+@media (max-width: 1199px) {
+    .aside { left: -270px; }
+    .aside.open { left: 0; }
+    .section { left: 0; }
+    .section.open { left: 270px; }
+}
+
+
+/*.container {*/
+/*    position: absolute;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    height: 100vh;*/
+/*    width: 100vw;*/
+/*    transform: translateX(-30px);*/
+/*    background: var(--skin-color);*/
+/*}*/
 
 .container .input {
     appearance: none;
