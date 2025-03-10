@@ -83,7 +83,7 @@ const Slider = () => {
     }, [currentSlide]);
 
     return (
-        <div className={`${styles.container} ${activeLink === '#section-4' ? styles.active : ''}`}
+        <div className={`${styles.container} ${styles.section} ${activeLink === '#section-4' ? styles.active : ''}`}
              ref={sliderContainerRef}
              onTouchStart={handleTouchStart}
              onTouchMove={handleTouchMove}
