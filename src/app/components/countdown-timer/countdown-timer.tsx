@@ -56,7 +56,7 @@ const CountdownTimer: React.FC = () => {
     };
 
     return (
-        <div className={`${styles.countdown} ${activeLink === '#section-5' ? styles.active : ''}`}>
+        <div className={`${styles.countdown} ${styles.section} ${activeLink === '#section-5' ? styles.active : ''}`}>
             <h1 className={styles.h1}>Следующий бизнес десант состоится 28 марта в Онежском округе <br/><br/>
                 <span>через:</span></h1>
             <div className={styles.timer}>
