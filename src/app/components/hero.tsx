@@ -7,7 +7,7 @@ const Hero = () => {
     const [activeLink, setActiveLink] = useState<string>('#section-0'); // Состояние для активной ссылки
 
     return (
-        <section className={`${styles.home} ${activeLink === '#section-0' ? styles.active : ''}`} id={"home"}>
+        <section className={`${styles.home} ${styles.section} ${activeLink === '#section-0' ? styles.active : ''}`} id={"home"}>
             <div className={styles.container}>
                 <div className={styles.row}>
                     <div className={`${styles.homeInfo} ${styles.padd15}`}>
