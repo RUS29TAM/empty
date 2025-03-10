@@ -14,12 +14,16 @@
     --text-black900: #302E4D;
     --text-black700: #504E70;
 
-    --skin-color: rgba(25, 25, 112);
+    /*--skin-color: rgba(25, 25, 112);*/
+    --skin-color: rgb(0,119,255);
     --skin-coub: #a9001a;
     --back-ground: #302E4DCC;
     --textShadow: 10px 5px 10px #302E4D;
     --serviceItemInner: 0 0 20px rgba(48, 46, 77, .15);
-    --iconService: #302E4DCC
+    --iconService: #302E4DCC;
+
+    --frame-color: #3900ca rgba(25, 25, 112, 0.7);
+
 }
 ::-webkit-scrollbar {
     width: 10px;
@@ -52,9 +56,18 @@ body {
     line-height: 1.5;
     font-size: 16px;
     font-family: 'Poppins', sans-serif;
-    background: var(--back-ground)
+    /*background: var(--back-ground);*/
+
 }
+
+
+body.light {
+    animation: dt linear .5s 1 forwards;
+}
+
 body.dark {
+    background: var(--back-ground);
+
     --bg-black900: #151515;
     --bg-black100: #222222;
     --bg-black50: #393939;
@@ -68,7 +81,32 @@ body.dark {
     --navIconColor: #fff;
     --serviceItemInner: inset 0 0 20px rgba(255, 255, 255, 0.16);
 
-    --iconService: #fff
+    --iconService: #fff;
+
+    animation: lt linear .5s 1 forwards;
 }
 
+@keyframes lt {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        /*background-color: #222222;*/
+        /*color: #ffffff;*/
+        transition: 1s;
+    }
+}
+
+@keyframes dt {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        /*background-color: #ffffff;*/
+        /*color: rgb(116, 116, 116);*/
+        transition: 1s;
+    }
+}
 
