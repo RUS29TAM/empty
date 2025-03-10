@@ -16,7 +16,7 @@ const Service = () => {
     const [activeLink, setActiveLink] = useState<string>('#section-2'); // Состояние для активной ссылки
 
     return (
-        <section className={`${styles.service} ${activeLink === '#section-2' ? styles.active : ''} `} id={"service"}>
+        <section className={`${styles.service} ${styles.section} ${activeLink === '#section-2' ? styles.active : ''} `} id={"service"}>
             <div className={`${styles.container}`}>
                 <div className={styles.row}>
                     <div className={`${styles.sectionTitle} ${styles.padd15}`}>
