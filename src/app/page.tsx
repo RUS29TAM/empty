@@ -19,6 +19,7 @@ import {
 import StyleSwitcher from "@/app/components/style-switcher";
 import CountdownTimer from "@/app/components/countdown-timer/countdown-timer";
 import Slider from "@/app/components/slider/slider";
+import Aside from "@/app/components/aside/aside";
 
 
 
@@ -47,14 +48,14 @@ const Home = () => {
     ];
 
     // Функция для обработки клика по пункту меню
-    const handleNavClick = (index: number) => {
-        setActiveSectionIndex(index);
-        removeBackSection();
-        addBackSection(index);
-        if (window.innerWidth < 1200) {
-            asideSectionTogglerBtn();
-        }
-    };
+    // const handleNavClick = (index: number) => {
+    //     setActiveSectionIndex(index);
+    //     removeBackSection();
+    //     addBackSection(index);
+    //     if (window.innerWidth < 1200) {
+    //         asideSectionTogglerBtn();
+    //     }
+    // };
 
     // Функция для добавления "backSection" к предыдущей секции
     const addBackSection = (index: number) => {
@@ -96,50 +97,51 @@ const Home = () => {
 
     <div className={styles.page} >
             <div className={styles.mainContainer}>
-                <div className={`${styles.aside} ${isAsideOpen ? styles.open : ''}`}>
-                    <div className={styles.logo}>
-                        <a href="#"><span>B</span><span>T</span></a>
-                    </div>
+                {/*<div className={`${styles.aside} ${isAsideOpen ? styles.open : ''}`}>*/}
+                {/*    <div className={styles.logo}>*/}
+                {/*        <a href="#"><span>B</span><span>T</span></a>*/}
+                {/*    </div>*/}
 
-                    <div onClick={asideSectionTogglerBtn} className={styles.navToggler}>
-                        <span></span>
-                    </div>
+                {/*    <div onClick={asideSectionTogglerBtn} className={styles.navToggler}>*/}
+                {/*        <span></span>*/}
+                {/*    </div>*/}
 
-                    <nav className={`${styles.nav}`}>
-                        <ul>
-                            {sections.map((section, index) => (
-                                <li style={{display: "flex", alignItems: "center"}} key={section.id}>
-                                    <div className={styles.navIconColor}>{section.icon}</div>
-                                    <a
-                                        href={`#section-${index}`}
-                                        className={activeSectionIndex === index ? styles.active : ''}
-                                        onClick={(e) => {
-                                            e.preventDefault();
-                                            handleNavClick(index);
-                                            handleLinkClick(e, `${`#section-${index}`}`)
-                                        }}
-                                    >
-                                        {section.title}
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
-                    </nav>
-                </div>
+                {/*    <nav className={`${styles.nav}`}>*/}
+                {/*        <ul>*/}
+                {/*            {sections.map((section, index) => (*/}
+                {/*                <li style={{display: "flex", alignItems: "center"}} key={section.id}>*/}
+                {/*                    <div className={styles.navIconColor}>{section.icon}</div>*/}
+                {/*                    <a*/}
+                {/*                        href={`#section-${index}`}*/}
+                {/*                        className={activeSectionIndex === index ? styles.active : ''}*/}
+                {/*                        onClick={(e) => {*/}
+                {/*                            e.preventDefault();*/}
+                {/*                            handleNavClick(index);*/}
+                {/*                            handleLinkClick(e, `${`#section-${index}`}`)*/}
+                {/*                        }}*/}
+                {/*                    >*/}
+                {/*                        {section.title}*/}
+                {/*                    </a>*/}
+                {/*                </li>*/}
+                {/*            ))}*/}
+
+                {/*        </ul>*/}
+                {/*    </nav>*/}
+                {/*</div>*/}
 
                 <div className={styles.mainContent} >
 
-                    {sections.map((section, index) => (
-                        <div
-                            key={section.id}
-                            id={`section-${index}`}
-                            className={`${styles.section} ${activeSectionIndex === index ? styles.active : ''}`}
-                        >
-                            {section.page}
-                        </div>
-                    ))}
+                    {/*{sections.map((section, index) => (*/}
+                    {/*    <div*/}
+                    {/*        key={section.id}*/}
+                    {/*        id={`section-${index}`}*/}
+                    {/*        className={`${styles.section} ${activeSectionIndex === index ? styles.active : ''}`}*/}
+                    {/*    >*/}
+                    {/*        {section.page}*/}
+                    {/*    </div>*/}
+                    {/*))}*/}
                 </div>
-                <StyleSwitcher />
+                {/*<StyleSwitcher />*/}
             </div>
     </div>
 );
