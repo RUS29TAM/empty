@@ -2,7 +2,9 @@
 import React, {useState} from 'react';
 import styles from "@/app/page.module.css";
 import ProgressBar from "@/app/components/progress-bar/progress-bar";
+import Link from "next/link";
 
+const redirect = "/pages/contacts"
 const About = () => {
     const [activeLink, setActiveLink] = useState<string>('#section-1'); // Состояние для активной ссылки
 
@@ -82,8 +84,8 @@ const About = () => {
 
                                 <div className={styles.row}>
                                     <div className={`${styles.buttons} ${styles.padd15}`}>
-                                        <a href="#contact" className={`${styles.btn} ${styles.hireMme}`}
-                                           data-section-index="1">Что здесь?</a>
+                                        <Link href={redirect} className={`${styles.btn} ${styles.hireMme}`}
+                                           data-section-index="1">Написать нам</Link>
                                     </div>
                                 </div>
                             </div>
