@@ -56,18 +56,18 @@ body {
     line-height: 1.5;
     font-size: 16px;
     font-family: 'Poppins', sans-serif;
-    /*background: var(--back-ground);*/
+
     overflow-x: hidden;
 
 }
 
 
 body.light {
-    animation: dt linear .5s 1 forwards;
+    animation: dt linear 2.5s 1 forwards;
 }
 
 body.dark {
-    /*background: var(--back-ground);*/
+    background: var(--back-ground);
 
     --bg-black900: #151515;
     --bg-black100: #222222;
@@ -75,7 +75,7 @@ body.dark {
     --text-black900: #FFFFFF;
     --text-black700: #E9E9E9;
     --skin-color: #08cac4;
-    --back-ground: rgb(43, 0, 62);
+    /*--back-ground: rgb(43, 0, 62);*/
     --skin-coub: #a9001a;
     --textShadow: 10px 5px 10px #000;
 
@@ -84,7 +84,7 @@ body.dark {
 
     --iconService: #fff;
 
-    animation: lt linear .5s 1 forwards;
+    animation: lt linear 1.5s 1 forwards;
 }
 
 @keyframes lt {
