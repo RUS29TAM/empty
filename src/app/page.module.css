@@ -379,7 +379,7 @@ h3.profession { font-size: 30px; margin: 15px 0; font-family: 'Jura', serif}
 .styleSwitcher {
     position: fixed;
     right: 0;
-    top: 60px;
+    top: 20px;
     padding: 15px;
     width: 200px;
     border: 1px solid var(--bg-black50);
@@ -407,8 +407,9 @@ h3.profession { font-size: 30px; margin: 15px 0; font-family: 'Jura', serif}
 }
 .styleSwitcher .sIcon i { line-height: 40px; }
 .styleSwitcher .styleSwitcherToggler { top: 0; }
-.styleSwitcher .dayNight { top: 55px; display: flex; justify-content: center; align-items: center; color: var(--skin-color)}
-/*.styleSwitcher .dayNight { top: 55px; }*/
+.styleSwitcher .styleSwitcherToggler .sIconOne {margin-top: 10px;}
+/*.styleSwitcher .dayNight { top: 55px; display: flex; justify-content: center; align-items: center; color: var(--skin-color)}*/
+.styleSwitcher .dayNight { top: 0px; display: flex; justify-content: center; align-items: center; color: var(--skin-color)}
 .styleSwitcher h4 { margin: 0 0 10px; color: var(--text-black700); font-size: 16px; font-weight: 600; text-transform: capitalize; }
 .styleSwitcher .colors { display: flex; flex-wrap: wrap; justify-content: space-between }
 .styleSwitcher .colors span { display: inline-block; height: 30px; width: 30px; border-radius: 50%; cursor: pointer }
