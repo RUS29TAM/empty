@@ -17,7 +17,7 @@
     /*--skin-color: rgba(25, 25, 112);*/
     --skin-color: rgb(0,119,255);
     --skin-coub: #a9001a;
-    --back-ground: #302E4DCC;
+    --back-ground: rgba(48, 46, 77, 0.8);
     --textShadow: 10px 5px 10px #302E4D;
     --serviceItemInner: 0 0 20px rgba(48, 46, 77, .15);
     --iconService: #302E4DCC;
@@ -57,6 +57,7 @@ body {
     font-size: 16px;
     font-family: 'Poppins', sans-serif;
     /*background: var(--back-ground);*/
+    overflow-x: hidden;
 
 }
 
@@ -66,7 +67,7 @@ body.light {
 }
 
 body.dark {
-    background: var(--back-ground);
+    /*background: var(--back-ground);*/
 
     --bg-black900: #151515;
     --bg-black100: #222222;
@@ -92,8 +93,6 @@ body.dark {
     }
     to {
         opacity: 1;
-        /*background-color: #222222;*/
-        /*color: #ffffff;*/
         transition: 1s;
     }
 }
@@ -104,8 +103,6 @@ body.dark {
     }
     to {
         opacity: 1;
-        /*background-color: #ffffff;*/
-        /*color: rgb(116, 116, 116);*/
         transition: 1s;
     }
 }
