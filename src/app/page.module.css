@@ -231,11 +231,23 @@ h3.profession { font-size: 30px; margin: 15px 0; font-family: 'Jura', serif}
 .about .aboutContent .statistics .skillItem .skillPercent { position: absolute; right: 0; color: var(--text-black900); top: -40px; font-weight: 400; line-height: 40px; }
 .about .aboutContent .statistics .skillItem .progress { background-color: var(--bg-black50); height: 7px; border-radius: 4px; width: 100%; position: relative; }
 .about .aboutContent .statistics .skillItem .progress .progressIn { position: absolute; left: 0; top: 0; height: 100%; border-radius: 4px; background-color: var(--skin-color); }
-.about .aboutContent .roadmapLeft, .about .aboutContent .roadmapRight { flex: 0 0 50%; max-width: 50%; margin-top: 30px; }
+.about .aboutContent .roadmapLeft, .about .aboutContent .roadmapRight { flex: 0 0 50%; max-width: 50%; margin-top: 30px; height: 220vh}
 .about .aboutContent h3.title { font-size: 24px; margin-bottom: 30px; font-weight: 700; color: var(--text-black900); }
 .about .aboutContent .timelineBox { flex: 0 0 100%; max-width: 100%; }
 .about .aboutContent .timeline { background-color: var(--bg-black100); padding: 30px 15px; border: 1px solid var(--bg-black50); border-radius: 10px; width: 100%; position: relative;}
-.about .aboutContent .timeline .timelineItem { position: relative; padding-left: 37px; padding-bottom: 50px; }
+.about .aboutContent .timeline .timelineItem { position: relative; padding-left: 37px; padding-bottom: 50px;
+    /* Create View Timeline */
+    view-timeline-name: --revealing-image;
+    view-timeline-axis: block;
+
+    /* Attach animation, linked to the  View Timeline */
+    animation: linear reveal both;
+    animation-timeline: --revealing-image;
+
+    /* Tweak range when effect should run*/
+    animation-range: entry 10% cover 50%;
+}
+
 .about .aboutContent .timeline .timelineItem:last-child { padding-bottom: 0; }
 .about .aboutContent .timeline .timelineItem::before { content: ''; width: 1px; position: absolute; height: 100%; left: 7px; top: 0; background-color: var(--skin-color); }
 .about .aboutContent .timeline .circleDot { position: absolute; left: 0; top: 0; height: 15px; width: 15px; border-radius: 50%; background-color: var(--skin-color); }
@@ -248,7 +260,7 @@ h3.profession { font-size: 30px; margin: 15px 0; font-family: 'Jura', serif}
 
 .service .container { padding-bottom: 40px;}
 /*.offer .container:hover .serviceItemInner:not(:hover) { scale: .95; background: var(--iconCardsShadow); box-shadow: var(--iconCardsShadow);}*/
-.service .serviceItem { margin-bottom: 30px; flex: 0 0 33.33%; max-width: 33.33%;}
+.service .serviceItem { margin-bottom: 30px; flex: 0 0 33.33%; max-width: 33.33%; }
 
 /*@property --gradient-angle {*/
 /*    syntax: "<angle>";*/
@@ -370,7 +382,8 @@ h3.profession { font-size: 30px; margin: 15px 0; font-family: 'Jura', serif}
     .contact .contactInfoItem { flex: 0 0 100%; max-width: 100%; }
 
     .about .aboutContent .statistics .skillItem h5 { line-height: 40px; font-weight: 600; font-size: 12px; color: var(--text-black900); /*text-transform: capitalize;*/ }
-    .about .aboutContent .statistics .skillItem .skillPercent { top: -40px; font-weight: 400; line-height: 40px; font-size: 14px; }
+    .about .aboutContent .statistics .skillItem .skillPercent
+    { top: -40px; font-weight: 400; line-height: 40px; font-size: 14px; }
 
 }
 
@@ -536,5 +549,17 @@ color-5.css
 @keyframes spin {
     to {
         transform: rotate(360deg);
+    }
+}
+
+
+@keyframes reveal {
+    from {
+        opacity: 0;
+        clip-path: inset(10%  10%  45% 45% );
+    }
+    to {
+        opacity: 1;
+        clip-path: inset(0% 0% 0% 0%);
     }
 }
