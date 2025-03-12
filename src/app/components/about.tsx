@@ -93,7 +93,7 @@ const About = () => {
                             <div className={`${styles.statistics} ${styles.padd15}`}>
                                 <div className={styles.row}>
                                     <ProgressBar
-                                        title="100% узнали о мерах поддержки"
+                                        title="100% участников узнали о новых мерах поддержки"
                                         percent={100}
                                         peopleCount={596}
                                         each={'чел.'}
