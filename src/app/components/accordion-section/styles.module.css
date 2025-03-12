@@ -1,0 +1,83 @@
+.sectionTitle {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--skin-color);
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+.accordionList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.accordionItem {
+    margin-bottom: 0.5rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.accordionButton {
+    width: 100%;
+    padding: 1rem;
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-black900);
+    background-color: var(--bg-black100);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    transition-duration: .3s;
+}
+
+.accordionButton:hover {
+    background-color: var(--skin-color);
+}
+
+.accordionButton.active {
+    background-color: var(--skin-color);
+    color: var(--text-black900);
+    transition-duration: .3s;
+}
+
+.accordionContent {
+    padding: 1rem;
+    background-color: #fff;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    animation: slideSection 1s ease;
+}
+
+
+@keyframes slideSection {
+    0% { transform: translateY(100%); }
+    100% { transform: translateY(0%); }
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+    .accordionButton {
+        font-size: 1rem;
+    }
+
+    .accordionContent {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .accordionButton {
+        font-size: 0.9rem;
+    }
+
+    .accordionContent {
+        font-size: 0.8rem;
+    }
+}

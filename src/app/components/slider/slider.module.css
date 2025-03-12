@@ -1,0 +1,209 @@
+.section {
+    background: var(--bg-black900);
+    min-height: 100vh;
+    /*display: block;*/
+    opacity: 0;
+    padding: 0 30px;
+    position: fixed;
+    left: 270px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: all .8s ease;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+
+
+.section.backSection { z-index: 1; }
+.section.active { z-index: 2; opacity: 1; animation: slideSection 1s ease;  }
+@keyframes slideSection {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(0%); }
+}
+
+@media (max-width: 1199px) {
+    .aside { left: -270px; }
+    .aside.open { left: 0; }
+    .section { left: 0; }
+    .section.open { left: 270px; }
+}
+
+
+/*.container {*/
+/*    position: absolute;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    height: 100vh;*/
+/*    width: 100vw;*/
+/*    transform: translateX(-30px);*/
+/*    background: var(--skin-color);*/
+/*}*/
+
+.container .input {
+    appearance: none;
+}
+
+.container .dots {
+    position: absolute;
+    z-index: 100;
+    display: flex;
+    bottom: 70px;
+    gap: 5px;
+}
+
+.container .dots .label {
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    cursor: pointer;
+    border-radius: 50%;
+    opacity: 0.5;
+    border: 2px solid #222222;
+}
+
+.container .input:nth-child(1):checked ~ .dots .label:nth-child(1),
+.container .input:nth-child(2):checked ~ .dots .label:nth-child(2),
+.container .input:nth-child(3):checked ~ .dots .label:nth-child(3),
+.container .input:nth-child(4):checked ~ .dots .label:nth-child(4),
+.container .input:nth-child(5):checked ~ .dots .label:nth-child(5),
+.container .input:nth-child(6):checked ~ .dots .label:nth-child(6),
+.container .input:nth-child(7):checked ~ .dots .label:nth-child(7),
+.container .input:nth-child(8):checked ~ .dots .label:nth-child(8),
+.container .input:nth-child(9):checked ~ .dots .label:nth-child(9),
+.container .input:nth-child(10):checked ~ .dots .label:nth-child(10)
+{
+    opacity: 1;
+    background: #ffffff;
+    box-shadow: 0 0 20px 0 #ffffff;
+}
+
+.container .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.container .slider .slide {
+    cursor: grab;
+    user-select: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /*background: var(--img);*/
+    background-size: cover;
+    /*background-position: center;*/
+    clip-path: circle(0% at 0% 50%);
+    transition: 1.5s;
+    transition-delay: 0s;
+    background-position: left;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.container .slider .slide:nth-child(even) {
+    clip-path: circle(0% at 100% 50%);
+    background-position: right;
+}
+
+.container .input:nth-child(1):checked ~ .slider .slide:nth-child(1),
+.container .input:nth-child(2):checked ~ .slider .slide:nth-child(2),
+.container .input:nth-child(3):checked ~ .slider .slide:nth-child(3),
+.container .input:nth-child(4):checked ~ .slider .slide:nth-child(4),
+.container .input:nth-child(5):checked ~ .slider .slide:nth-child(5),
+.container .input:nth-child(6):checked ~ .slider .slide:nth-child(6),
+.container .input:nth-child(7):checked ~ .slider .slide:nth-child(7),
+.container .input:nth-child(8):checked ~ .slider .slide:nth-child(8),
+.container .input:nth-child(9):checked ~ .slider .slide:nth-child(9),
+.container .input:nth-child(10):checked ~ .slider .slide:nth-child(10)
+
+{
+    opacity: 1;
+    clip-path: circle(150% at 50% 50%);
+    transition-delay: 1s;
+    background-position: center;
+}
+
+.content {
+    position: relative;
+    padding: 50px 50px 120px 50px;
+    max-width: 800px;
+    text-shadow: 10px 5px 10px #000;
+}
+
+.content .h2 {
+    color: #fff;
+    font-size: 3em;
+    background: rgba(47, 47, 47, 0.7);
+    border-top-right-radius: 16px;
+    border-top-left-radius: 16px;
+    padding: 0 15px;
+    font-family: "Jura", serif;
+}
+
+.content .p {
+    color: #fff;
+    background: rgba(47, 47, 47, 0.7);
+    border-bottom-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+    padding: 0 15px 15px;
+    font-family: "Jura", serif; font-size: 18px;
+}
+
+
+/*@property --＠color-1 {*/
+/*    syntax: "<color>";*/
+/*    inherits: false;*/
+/*    initial-value: hsl(98 100% 62%);*/
+/*}*/
+
+/*@property --＠color-2 {*/
+/*    syntax: "<color>";*/
+/*    inherits: false;*/
+/*    initial-value: hsl(204 100% 59%);*/
+/*}*/
+
+/*!* keyframes that change the color variable *!*/
+/*@keyframes gradient-change {*/
+/*    to {*/
+/*        --＠color-1: hsl(210 100% 59%);*/
+/*        --＠color-2: hsl(310 100% 59%);*/
+/*    }*/
+/*}*/
+
+/*.h2 {*/
+/*    !* apply variable changes over time *!*/
+/*    animation: gradient-change 2s linear infinite alternate;*/
+
+/*    text-shadow: 10px 5px 10px #fff;*/
+
+/*    background: linear-gradient(*/
+/*        !**/
+/*          in oklch produces more vibrant gradient results*/
+/*          learn more https://developer.chrome.com/docs/css-ui/access-colors-spaces#color_interpolation*/
+/*        *!*/
+/*            to right in oklch,*/
+/*                !* use the variables in a gradient (or wherever!) *!*/
+/*            var(--＠color-1),*/
+/*            var(--＠color-2)*/
+/*    );*/
+
+/*    !* old browser support *!*/
+/*    -webkit-background-clip: text;*/
+/*    -webkit-text-fill-color: transparent;*/
+
+/*    !* modern browser version *!*/
+/*    background-clip: text;*/
+/*    color: transparent;*/
+/*}*/

@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Marck+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
 
 :root {
     --bg-black900: #F2F2FC;
@@ -8,10 +14,32 @@
     --text-black900: #302E4D;
     --text-black700: #504E70;
 
-    --skin-color: #EC1839;
+    /*--skin-color: rgba(25, 25, 112);*/
+    --skin-color: rgb(0,119,255);
+    --skin-coub: #a9001a;
+    --back-ground: rgba(48, 46, 77, 0.8);
+    --textShadow: 10px 5px 10px #302E4D;
+    --serviceItemInner: 0 0 20px rgba(48, 46, 77, .15);
+    --iconService: #302E4DCC;
+
+    --frame-color: #3900ca rgba(25, 25, 112, 0.7);
 
 }
-
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background-color: darkgrey;
+}
+::-webkit-scrollbar-thumb {
+    width: 5px;
+    background: var(--skin-color);
+    border-radius: 16px;
+    /*box-shadow: inset 0 0 50px #08cac4;*/
+}
+::before, ::after {
+    box-sizing: border-box;
+}
 * {
     margin: 0;
     padding: 0;
@@ -20,16 +48,62 @@
     box-sizing: border-box;
 }
 
-::before, ::after {
-    box-sizing: border-box;
-}
 
 ul {
     list-style: none;
 }
-
 body {
     line-height: 1.5;
     font-size: 16px;
     font-family: 'Poppins', sans-serif;
+
+    overflow-x: hidden;
+
 }
+
+
+body.light {
+    animation: dt linear 2.5s 1 forwards;
+}
+
+body.dark {
+    background: var(--back-ground);
+
+    --bg-black900: #151515;
+    --bg-black100: #222222;
+    --bg-black50: #393939;
+    --text-black900: #FFFFFF;
+    --text-black700: #E9E9E9;
+    --skin-color: #08cac4;
+    /*--back-ground: rgb(43, 0, 62);*/
+    --skin-coub: #a9001a;
+    --textShadow: 10px 5px 10px #000;
+
+    --navIconColor: #fff;
+    --serviceItemInner: inset 0 0 20px rgba(255, 255, 255, 0.16);
+
+    --iconService: #fff;
+
+    animation: lt linear 1.5s 1 forwards;
+}
+
+@keyframes lt {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        transition: 1s;
+    }
+}
+
+@keyframes dt {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        transition: 1s;
+    }
+}
+
