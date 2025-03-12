@@ -26,17 +26,17 @@ const StyleSwitcher = () => {
     //     return () => window.removeEventListener('scroll', handleScroll);
     // }, [isOpen]);
 
-    const toggleStyleSwitcher = () => setIsOpen(!isOpen);
-
-    const setActiveStyle = (color: string) => {
-        document.querySelectorAll('.alternateStyle').forEach((style) => {
-            if (color === style.getAttribute(styles.sectionTitle)) {
-                style.removeAttribute('disabled');
-            } else {
-                style.setAttribute('disabled', 'true');
-            }
-        });
-    };
+    // const toggleStyleSwitcher = () => setIsOpen(!isOpen);
+    //
+    // const setActiveStyle = (color: string) => {
+    //     document.querySelectorAll('.alternateStyle').forEach((style) => {
+    //         if (color === style.getAttribute(styles.sectionTitle)) {
+    //             style.removeAttribute('disabled');
+    //         } else {
+    //             style.setAttribute('disabled', 'true');
+    //         }
+    //     });
+    // };
 
 
     useEffect(() => {
