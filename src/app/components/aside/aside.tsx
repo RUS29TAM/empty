@@ -11,7 +11,7 @@ import {
 } from "react-icons/bs";
 import styles from "@/app/page.module.css";
 import Link from "next/link";
-import { useRouter } from "next/navigation"
+import {usePathname, useRouter} from "next/navigation"
 
 const navLinks = [
     { href: '/pages/main', icon: <BsHouse />, label: 'Главная' },
@@ -26,11 +26,15 @@ const Aside = () => {
     const [isAsideOpen, setIsAsideOpen] = useState(false); // Состояние для боковой панели
     const [activeSectionIndex, setActiveSectionIndex] = useState(0);
 
+
     const router = useRouter(); // Используем useRouter
+    const pathname = usePathname(); // Используем usePathname для получения текущего пути
 
     useEffect(() => {
         // Перенаправляем на /pages/main при первой загрузке
-        router.push('/pages/main');
+        if(pathname === '/')  {
+            router.push('/pages/main');
+        }
     }, [router]);
 
     // Функция-заглушка для тогглера боковой панели
@@ -39,19 +43,15 @@ const Aside = () => {
         setIsAsideOpen((prevIsOpen) => !prevIsOpen); // Переключаем состояние
     };
 
-
+    //
     const handleNavClick = (index: number) => {
         setActiveSectionIndex(index);
     };
 
-    useEffect(() => {
-        setActiveSectionIndex(0)
-    },[])
-
     return (
 
         <div className={styles.page}>
-            <div className={styles.mainContainer}>
+            <div className={`${styles.mainContainer}`}>
                 <div className={`${styles.aside} ${isAsideOpen ? styles.open : ''}`}>
                     <div className={styles.logo}>
                         <Link href={navLinks[0].href}><span>B</span><span>T</span></Link>
@@ -69,7 +69,7 @@ const Aside = () => {
                                     <Link
                                         onClick={() => handleNavClick(index)}
                                         href={link.href}
-                                        className={`${activeSectionIndex === index ? styles.active : ''}`}
+                                        className={`${pathname === link.href ? styles.active : ''}`}
                                     >
                                         {link.label}
                                     </Link>
