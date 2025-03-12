@@ -12,6 +12,7 @@ import {
 import styles from "@/app/page.module.css";
 import Link from "next/link";
 import {usePathname, useRouter} from "next/navigation"
+import StyleSwitcher from "@/app/components/style-switcher";
 
 const navLinks = [
     { href: '/pages/main', icon: <BsHouse />, label: 'Главная' },
@@ -79,6 +80,7 @@ const Aside = () => {
                     </nav>
                 </div>
             </div>
+            <StyleSwitcher />
         </div>
     );
 };
