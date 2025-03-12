@@ -23,7 +23,6 @@ const Contact = () => {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-
         // Простая валидация
         if (!formData.name || !formData.email || !formData.subject || !formData.message) {
             alert('Пожалуйста, заполните все поля.');
@@ -88,13 +87,13 @@ const Contact = () => {
                     <div className={`${styles.contactInfoItem} ${styles.padd15}`}>
                         <div className={`${styles.icon}`}><i className={`${'fa'} ${'fa-envelope'}`}></i></div>
                         <h4>Email</h4>
-                        <p>info@gmail.com</p>
+                        <p>office@msp29.ru</p>
                     </div>
 
                     <div className={`${styles.contactInfoItem} ${styles.padd15}`}>
                         <div className={`${styles.icon}`}><i className={`${'fa'} ${'fa-globe'}`}></i></div>
                         <h4>Сайт</h4>
-                        <p>www.domain.com</p>
+                        <p>www.msp29.ru</p>
                     </div>
                 </div>
 
