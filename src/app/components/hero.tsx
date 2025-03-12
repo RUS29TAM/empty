@@ -11,7 +11,7 @@ const Hero = () => {
             <div className={styles.container}>
                 <div className={styles.row}>
                     <div className={`${styles.homeInfo} ${styles.padd15}`}>
-                        <h3 className={styles.hello}>Привет, вы на проекте &nbsp; <br/><span className={styles.name}>Бизнес Десант</span>
+                        <h3 className={styles.hello}>Приветствуем вас на проекте &nbsp; <br/><span className={styles.name}>Бизнес Десант</span>
                         </h3>
                         {/*<h3 className={styles.profession}>наша&nbsp;<span className={styles.typing}>ЦЕЛЬ</span></h3>*/}
                         <p className={styles.p}>Мы стремимся создать благоприятные условия для развития малого и
