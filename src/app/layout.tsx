@@ -2,8 +2,7 @@ import type {Metadata} from "next";
 import "./globals.css";
 import {ThemeProvider} from "@/app/ThemeContext";
 import {VideoProvider} from "@/app/VideoProvider";
-import Aside from "@/app/components/aside/aside";
-import StyleSwitcher from "@/app/components/style-switcher";
+import Page from "@/app/page";
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -14,11 +13,10 @@ export default function RootLayout({children,}: Readonly<{ children: React.React
     return (
         <ThemeProvider>
             <VideoProvider>
-                <html lang="en">
+                <html lang="ru">
                 <body>
-                <Aside/>
-                {children}
-                <StyleSwitcher/>
+                    <Page />
+                    {children}
                 </body>
                 </html>
             </VideoProvider>
