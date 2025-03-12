@@ -4,8 +4,6 @@ import Service from "@/app/components/service";
 const Page = () => {
     return (
         <Service />
-
-
     );
 };
 
