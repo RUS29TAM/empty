@@ -6,6 +6,9 @@
       "dom.iterable",
       "esnext"
     ],
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -32,8 +35,9 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
+    "dist/types/**/*.ts",
     "next-env.d.ts",
-    "dist/types/**/*.ts"
+    "./dist/main.js/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"
